@@ -4,47 +4,47 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .permissions import IsOwnerOrReadOnly
 
-from .models import Applicant
-from .serializers import ApplicantSerializer, PopulatedApplicantSerializer
+from .models import Company
+from .serializers import CompanySerializer, PopulatedCompanySerializer
 
 # Create your views here.
-class ApplicantList(APIView):
+class CompanyList(APIView):
 
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get(self, _request):
-        applicants = Applicant.objects.all()
-        serializer = PopulatedApplicantSerializer(applicants, many=True)
+        companys = Company.objects.all()
+        serializer = PopulatedCompanySerializer(companys, many=True)
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = ApplicantSerializer(data=request.data)
+        serializer = CompanySerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
 
-class ApplicantDetail(APIView):
+class CompanyDetail(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
 
-    def get_applicant(self, pk):
+    def get_company(self, pk):
         try:
-            applicant = Applicant.objects.get(pk=pk)
-        except Applicant.DoesNotExist:
+            company = Company.objects.get(pk=pk)
+        except Company.DoesNotExist:
             raise Http404
 
-        return applicant
+        return company
 
     def get(self, _request, pk):
-        applicant = self.get_applicant(pk)
-        serializer = ApplicantSerializer(applicant)
+        company = self.get_company(pk)
+        serializer = CompanySerializer(company)
         return Response(serializer.data)
 
     def put(self, request, pk):
-        applicant = self.get_offer(pk)
-        serializer = ApplicantSerializer(applicant, data=request.data)
+        company = self.get_offer(pk)
+        serializer = CompanySerializer(company, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
@@ -53,6 +53,6 @@ class ApplicantDetail(APIView):
 
 
     def delete(self, _request, pk):
-        applicant = self.get_applicant(pk)
-        applicant.delete()
+        company = self.get_company(pk)
+        company.delete()
         return Response(status=204)

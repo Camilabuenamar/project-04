@@ -1,11 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-from ada.models import Skill
-from multiselectfield import MultiSelectField
 
 # Create your models here.
-class Applicant(models.Model):
-class CompanyUser(models.Model):
+class Company(models.Model):
     INDUSTRY_CHOICES = (
     ('Consumer Goods and Services', 'Consumer Goods and Services'),
     ('B2B Software and Services', 'B2B Software and Services'),
@@ -28,7 +25,7 @@ class CompanyUser(models.Model):
     website = models.URLField()
     women_achievements = models.CharField(max_length=1000, required=False)
     employees = models.IntegerField()
-    offers = models.ManyToManyField(Skills, related_name='users', blank=True)
+    women_employees_percentaje = models.IntegerField(required=False)
 
     def __str__(self):
-        return self.username
+        return self.name

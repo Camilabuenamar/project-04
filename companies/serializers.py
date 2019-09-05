@@ -1,25 +1,25 @@
 from rest_framework import serializers
-from ada.models import Skill
+from ada.models import Offer
 from jwt_auth.serializers import UserSerializer
-from .models import Applicant
+from .models import Company
 
-class ApplicantSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Applicant
-        fields = ('id', 'firstname', 'lastname', 'headline', 'roles', 'linkedin', 'portfolio', 'github', 'cv')
-
-class SkillSerializer(serializers.ModelSerializer):
+class CompanySerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Skill
+        model = Company
+        fields = ('id', 'name', 'location', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje')
+
+class OfferSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Offer
         fields = ('id', 'name', 'level')
 
 
-class PopulatedApplicantSerializer(serializers.ModelSerializer):
+class PopulatedOfferSerializer(serializers.ModelSerializer):
 
-    skills = SkillSerializer(many=True)
+    offers = OfferSerializer(many=True)
     user = UserSerializer()
 
-    class Meta(ApplicantSerializer.Meta):
-        fields = ('id', 'user', 'firstname', 'lastname', 'headline', 'roles', 'linkedin', 'portfolio', 'github', 'cv', 'skills')
+    class Meta(OfferSerializer.Meta):
+        fields = ('id', 'user', 'name', 'location', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje', 'offers')
