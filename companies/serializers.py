@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ada.models import Offer
+from ada.serializers import OfferSerializer
 from jwt_auth.serializers import UserSerializer
 from .models import Company
 
@@ -9,14 +9,7 @@ class CompanySerializer(serializers.ModelSerializer):
         model = Company
         fields = ('id', 'name', 'location', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje')
 
-class OfferSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Offer
-        fields = ('id', 'name', 'level')
-
-
-class PopulatedOfferSerializer(serializers.ModelSerializer):
+class PopulatedCompanySerializer(serializers.ModelSerializer):
 
     offers = OfferSerializer(many=True)
     user = UserSerializer()
