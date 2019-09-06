@@ -21,5 +21,5 @@ urlpatterns = [
     path('auth/', include('rest_framework.urls')),
     path('', include('ada.urls')),
     path('', include('jwt_auth.urls')),
-#    path('', include('frontend.urls')),
+    path('', include('frontend.urls')),
 ]

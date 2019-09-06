@@ -12,7 +12,7 @@ class ApplicantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Applicant
-        fields = ('id', 'firstname', 'lastname', 'headline', 'roles', 'linkedin', 'portfolio', 'github', 'cv')
+        fields = ('id', 'firstname', 'lastname', 'image', 'headline', 'roles', 'linkedin', 'portfolio', 'github', 'cv')
 
 class CompanySerializer(serializers.ModelSerializer):
 
@@ -32,7 +32,7 @@ class PopulatedApplicantSerializer(serializers.ModelSerializer):
     user = UserSerializer()
 
     class Meta(ApplicantSerializer.Meta):
-        fields = ('id', 'user', 'firstname', 'lastname', 'headline', 'roles', 'linkedin', 'portfolio', 'github', 'cv', 'skills')
+        fields = ('id', 'user', 'firstname', 'lastname', 'image', 'headline', 'roles', 'linkedin', 'portfolio', 'github', 'cv', 'skills')
 
 class PopulatedCompanySerializer(serializers.ModelSerializer):
 
@@ -40,7 +40,7 @@ class PopulatedCompanySerializer(serializers.ModelSerializer):
     user = UserSerializer()
 
     class Meta(OfferSerializer.Meta):
-        fields = ('id', 'user', 'name', 'location', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje', 'offers')
+        fields = ('id', 'user', 'name', 'logo', 'location', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje', 'offers')
 
 class PopulatedOfferSerializer(serializers.ModelSerializer):
 
