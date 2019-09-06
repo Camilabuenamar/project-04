@@ -1,18 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './style.scss'
 import axios from 'axios'
+import { HashRouter, Route , Switch} from 'react-router-dom'
+
+import Home from './components/pages/Home'
 
 class App extends React.Component {
-  componentDidMount() {
-    axios.get('/api/applicants/')
-      .then(res => console.log(res.data))
-  }
 
   render() {
     return (
-      <h1>Welcome to Ada</h1>
+      <HashRouter>
+        <Switch>
+          <Route path= "/" component={Home}/>
+        </Switch>
+      </HashRouter>
     )
   }
+
+
+
 }
 
 ReactDOM.render(
