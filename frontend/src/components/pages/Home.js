@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import {Link} from 'react-router-dom'
 
 class Home extends React.Component {
   render() {
@@ -17,8 +17,8 @@ class Home extends React.Component {
               </h2>
             </div>
             <div className="buttons" id="home-buttons">
-              <a className="button is-danger is-outlined">Login</a>
-              <a className="button is-danger is-outlined">Register</a>
+              <Link to ="/login"><a className="button is-danger is-outlined" id="login-button">Login</a></Link>
+              <Link to ="/register"><a className="button is-danger is-outlined" id="register-button">Register</a></Link>
             </div>
           </div>
         </div>

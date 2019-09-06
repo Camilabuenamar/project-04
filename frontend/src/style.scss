@@ -2,13 +2,22 @@
 
 #ada {
   font-weight: bold;
+  font-size: 60px;
   color: #DF2B4F;
 }
 
 #home-buttons {
+  display: flex;
   margin-left: 550px;
   margin-top: 30px;
+  #login-button {
+    margin-right: 5px;
+  }
+  #register-button {
+    margin-left: 5px;
+  }
 }
+
 
 .logo {
   margin-left: 300px;
