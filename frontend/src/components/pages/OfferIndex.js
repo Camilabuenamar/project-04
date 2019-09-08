@@ -104,41 +104,32 @@ class OfferIndex extends React.Component {
         <div className="container">
           <div className="filters">
             <form>
-
-              {/* SEARCH */}
-              <div className="field">
+              <div className="field is-grouped is-grouped-centered">
                 <div className="control">
                   <input
                     placeholder="Search Jobtitle"
                     className="input"
                     onKeyUp={this.handleKeyUpJobtitle}/>
                 </div>
-              </div>
-              <div className="field">
                 <div className="control">
                   <input
                     placeholder="Search Company"
                     className="input"
                     onKeyUp={this.handleKeyUpCompany}/>
                 </div>
-              </div>
-
-              {/* ORDER BY */}
-              <div className="field">
-                <label className="label">Order by:</label>
-                <div className="select is-fullwidth">
+                <label className="label">Order by: </label>
+                <div className="select">
                   <select onChange={this.handleChangeOrder}>
-                    <option value="jobtitle|asc">A - Z</option>
-                    <option value="jobtitle|desc">Z - A</option>
-                    <option value="wage|desc">Higher Wage first</option>
-                    <option value="wage|asc">Lower Wage first</option>
+                    <option value="jobtitle|asc"> A - Z</option>
+                    <option value="jobtitle|desc"> Z - A</option>
+                    <option value="wage|desc"> Higher Wage first</option>
+                    <option value="wage|asc"> Lower Wage first</option>
                   </select>
                 </div>
               </div>
-              {/* INGREDIENTS */}
               <div className="field">
                 <label className="label">Technologies:</label>
-                <div className="control">
+                <div className="control is-expanded">
                   <Select
                     isMulti
                     isSearchable
@@ -149,8 +140,6 @@ class OfferIndex extends React.Component {
                     options={technologies}
                   />
                 </div>
-              </div>
-              <div className="field">
                 <div>
                   <label className="label">Find a match with your skills</label>
                   <a className="button is-danger is-outlined">Yes, please</a>
