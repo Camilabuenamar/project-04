@@ -6,11 +6,31 @@
   color: #DF2B4F;
 }
 
+.logoicon {
+  margin-left: 45px;
+  margin-bottom: 100px;
+}
+
+.container {
+  margin: auto;
+}
+
 #home-buttons {
   display: flex;
   margin-left: 550px;
   margin-top: 30px;
-  #login-button {
+  #first-button {
+    margin-right: 5px;
+  }
+  #register-button {
+    margin-left: 5px;
+  }
+}
+
+#two-buttons {
+  display: flex;
+  margin: auto;
+  #first-button {
     margin-right: 5px;
   }
   #register-button {
@@ -36,4 +56,9 @@
 }
 .hero-background.is-transparent {
   opacity: 0.3;
+}
+
+.form {
+  margin: auto;
+  width: 500px;
 }

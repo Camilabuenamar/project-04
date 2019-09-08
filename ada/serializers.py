@@ -18,7 +18,7 @@ class CompanySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Company
-        fields = ('id', 'name', 'location', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje')
+        fields = ('id', 'name', 'location', 'industry', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje')
 
 class OfferSerializer(serializers.ModelSerializer):
 
@@ -40,7 +40,7 @@ class PopulatedCompanySerializer(serializers.ModelSerializer):
     user = UserSerializer()
 
     class Meta(OfferSerializer.Meta):
-        fields = ('id', 'user', 'name', 'logo', 'location', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje', 'offers')
+        fields = ('id', 'user', 'name', 'logo', 'location', 'industry', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje', 'offers')
 
 class PopulatedOfferSerializer(serializers.ModelSerializer):
 

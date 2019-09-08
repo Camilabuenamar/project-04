@@ -17,8 +17,8 @@ class Home extends React.Component {
               </h2>
             </div>
             <div className="buttons" id="home-buttons">
-              <Link to ="/login"><a className="button is-danger is-outlined" id="login-button">Login</a></Link>
-              <Link to ="/register"><a className="button is-danger is-outlined" id="register-button">Register</a></Link>
+              <Link to ="/login"><a className="button is-danger is-outlined" id="first-button">Login</a></Link>
+              <Link to ="/register"><a className="button is-danger is-outlined" id="second-button">Register</a></Link>
             </div>
           </div>
         </div>

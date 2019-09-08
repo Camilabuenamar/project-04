@@ -85,6 +85,7 @@ class Company(models.Model):
     name = models.CharField(max_length=50)
     logo = models.ImageField(upload_to=None)
     location = models.CharField(max_length=50)
+    industry = models.CharField(max_length=50, choices=INDUSTRY_CHOICES, default=None)
     description = models.CharField(max_length=1000)
     website = models.URLField()
     women_achievements = models.CharField(max_length=1000, blank=True)

@@ -47,7 +47,16 @@ class Login extends React.Component {
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <div className="container">
-            <form className="loginform" onSubmit={this.handleSubmit}>
+            <div className="logoicon">
+              <h1 className="title is-2" id="ada">
+                ADA
+              </h1>
+              <h2 className="subtitle is-4">
+                Women 3.0
+              </h2>
+            </div>
+            <form className="form" onSubmit={this.handleSubmit}>
+              <h2 className="subtitle is-4 has-text-centered">Login</h2>
               <div className="field">
                 <label className="label">Email</label>
                 <div className="control">
