@@ -1,4 +1,5 @@
 import React from 'react'
+import OfferModal from '../modals/OfferDetail'
 
 
 const OfferCard = ({ name, location, jobtitle, role, wage, technologies }) => {
@@ -15,6 +16,7 @@ const OfferCard = ({ name, location, jobtitle, role, wage, technologies }) => {
           <div className="tags">{technologies.map(technology => <div className="tag" key={technology}>{technology}</div>)}</div>
         </p>
         <h2 className="content text">{wage}</h2>
+        <span className="button is-danger"><OfferModal/></span>
       </div>
     </div>
   )

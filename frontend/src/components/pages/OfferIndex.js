@@ -72,11 +72,6 @@ class OfferIndex extends React.Component {
     this.setState({ filterData })
   }
 
-  handleCheckbox(e) {
-    const filterData = { ...this.state.filterData, [e.target.name]: e.target.checked }
-    this.setState({ filterData })
-  }
-
   handleChangeOrder(e) {
     const filterData = { ...this.state.filterData, sortTerm: e.target.value }
     this.setState({ filterData})
@@ -95,6 +90,7 @@ class OfferIndex extends React.Component {
     const sortedOffers = _.orderBy(filterOffers, [field], [order])
     return sortedOffers
   }
+  
   render() {
     console.log(this.state.filterData)
     console.log(this.filterOffers())
@@ -154,15 +150,20 @@ class OfferIndex extends React.Component {
               key={offer._id}
               className="column is-half"
             >
-              <Link to={`/offers/${offer._id}`}>
+              <span className="OfferCard">
                 <OfferCard
                   name={offer.company.name}
                   location={offer.company.location}
                   jobtitle={offer.jobtitle}
                   role={offer.role}
                   wage={offer.wage}
-                  technologies={offer.technologies} />
-              </Link>
+                  experience={offer.experience_in_years}
+                  description={offer.description_of_role}
+                  qualifications={offer.qualifications}
+                  benefits={offer.benefits}
+                  technologies={offer.technologies}
+                />
+              </span>
             </div>
           )}
         </div>

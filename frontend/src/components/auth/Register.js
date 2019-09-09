@@ -26,7 +26,7 @@ class Register extends React.Component {
   handleSubmitCompany(e) {
     e.preventDefault()
 
-    axios.post('/api/register', this.state.formData)
+    axios.post('/api/register/', this.state.formData)
       .then(res => {
         this.props.history.push('/companyregistration')
       })
@@ -35,7 +35,7 @@ class Register extends React.Component {
   handleSubmitUser(e) {
     e.preventDefault()
 
-    axios.post('/api/register', this.state.formData)
+    axios.post('/api/register/', this.state.formData)
       .then(res => {
         this.props.history.push('/userregistration')
       })
@@ -43,6 +43,7 @@ class Register extends React.Component {
   }
 
   render() {
+    console.log(this.state.formData)
     return (
       <section className="hero is-large has-background">
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
@@ -64,7 +65,7 @@ class Register extends React.Component {
                   <input
                     className="input"
                     name="username"
-                    type="username"
+                    type="text"
                     placeholder="eg: ada.lovelace"
                     onChange={this.handleChange}
                   />
@@ -106,7 +107,7 @@ class Register extends React.Component {
                   <input
                     className="input"
                     type="password"
-                    name="passwordConfirmation"
+                    name="password_confirmation"
                     placeholder="eg: ••••••••"
                     onChange={this.handleChange}
                   />

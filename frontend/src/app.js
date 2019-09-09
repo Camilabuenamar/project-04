@@ -9,6 +9,9 @@ import Register from './components/auth/Register'
 import CompanyRegister from './components/auth/CompanyRegister'
 import UserRegister from './components/auth/UserRegister'
 import OfferIndex from './components/pages/OfferIndex'
+import CompanyIndex from './components/pages/CompanyIndex'
+import UserProfile from './components/pages/UserProfile'
+import CompanyProfile from './components/pages/CompanyProfile'
 
 class App extends React.Component {
 
@@ -17,6 +20,9 @@ class App extends React.Component {
       <HashRouter>
         <Switch>
           <Route path="/offers" component={OfferIndex} />
+          <Route path="/companies" component={CompanyIndex} />
+          <Route path="/userprofile" component={UserProfile} />
+          <Route path="/companyprofile" component={CompanyProfile} />
           <Route path="/login" component={Login} />
           <Route path="/companyregistration" component={CompanyRegister} />
           <Route path="/userregistration" component={UserRegister} />

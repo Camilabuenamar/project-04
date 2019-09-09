@@ -50,17 +50,38 @@ class Applicant(models.Model):
     ('Machine Learning', 'Machine Learning'),
     ('Robotics', 'Robotics'),
     )
+    TECHNOLOGY_CHOICES = (
+    ('JavaScript', 'JavaScript'),
+    ('Python', 'Python'),
+    ('React', 'React'),
+    ('Java', 'Java'),
+    ('HTML', 'HTML'),
+    ('Git', 'Git'),
+    ('Node.js', 'Node.js'),
+    ('CSS', 'CSS'),
+    ('MySQL', 'MySQL'),
+    ('Amazon Web Services (AWS)', 'Amazon Web Services (AWS)'),
+    ('C++', 'C++'),
+    ('PostgreSQL', 'PostgreSQL'),
+    ('Bash/Shell', 'Bash/Shell'),
+    ('Angular', 'Angular'),
+    ('React Native', 'React Native'),
+    ('MongoDB', 'MongoDB'),
+    ('Ruby on Rails', 'Ruby on Rails'),
+    ('PHP', 'PHP'),
+    ('C', 'C'),
+    )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
-    image = models.ImageField(upload_to=None)
+    image = models.CharField(max_length=1000, blank=True)
     headline = models.CharField(max_length=250)
     roles = MultiSelectField(choices=ROLE_CHOICES)
     linkedin = models.URLField()
     portfolio = models.URLField()
     github = models.URLField()
-    cv = models.FileField(upload_to=None, max_length=100)
-    skills = models.ManyToManyField(Skill, related_name='users')
+    cv = models.CharField(max_length=1000)
+    skills = MultiSelectField(choices=TECHNOLOGY_CHOICES)
 
     def __str__(self):
         return self.user
@@ -83,7 +104,7 @@ class Company(models.Model):
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    logo = models.ImageField(upload_to=None)
+    logo = models.CharField(max_length=1000, blank=True)
     location = models.CharField(max_length=50)
     industry = models.CharField(max_length=50, choices=INDUSTRY_CHOICES, default=None)
     description = models.CharField(max_length=1000)

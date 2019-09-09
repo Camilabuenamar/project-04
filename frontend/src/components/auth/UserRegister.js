@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 const animatedComponents = makeAnimated()
+import ReactFilestack from 'filestack-react'
 
 const roles = [
   { value: 'Frontend', label: 'Frontend' },
@@ -17,6 +18,44 @@ const roles = [
   { value: 'Machine Learning', label: 'Machine Learning' },
   { value: 'Robotics', label: 'Robotics' }
 ]
+
+const skills = [
+  { value: 'Javascript', label: 'Javascript' },
+  { value: 'Python', label: 'Python' },
+  { value: 'React', label: 'React' },
+  { value: 'Java', label: 'Java' },
+  { value: 'HTML', label: 'HTML' },
+  { value: 'Git', label: 'Git' },
+  { value: 'Node.js', label: 'Node.js' },
+  { value: 'CSS', label: 'CSS' },
+  { value: 'MySQL', label: 'MySQL' },
+  { value: 'Amazon Web Services (AWS)', label: 'Robotics' },
+  { value: 'C++', label: 'C++' },
+  { value: 'PostgreSQL', label: 'PostgreSQL' },
+  { value: 'Bash/Shell', label: 'Bash/Shell' },
+  { value: 'Angular', label: 'Angular' },
+  { value: 'React Native', label: 'React Native' },
+  { value: 'MongoDB', label: 'MongoDB' },
+  { value: 'Ruby on Rails', label: 'Ruby on Rails' },
+  { value: 'PHP', label: 'PHP' },
+  { value: 'C', label: 'C' }
+]
+
+const fileKEY = 'SECRET KEY'
+
+const imageUpload = {
+  accept: 'image/*',
+  options: {
+    resize: {
+      width: 100
+    }
+  },
+  transformations: {
+    crop: false,
+    circle: false,
+    rotate: false
+  }
+}
 
 class UserRegister extends React.Component {
 
@@ -38,12 +77,30 @@ class UserRegister extends React.Component {
 
   }
 
+  handleChangeSkills(selectedSkills) {
+    const skills = selectedSkills.map(skills => skills.value)
+    const formData = { ...this.state.formData, skills: skills}
+    this.setState({ formData })
+  }
+
+  handleUploadImages(e) {
+    const formData = {...this.state.formData, image: e.filesUploaded[0].url}
+    this.setState({ formData })
+    document.getElementById('progress').innerHTML = 'image chosen'
+  }
+
+  handleUploadCv(e) {
+    const formData = {...this.state.formData, cv: e.filesUploaded[0].url}
+    this.setState({ formData })
+    document.getElementById('progress').innerHTML = 'CV chosen'
+  }
+
   handleSubmit(e) {
     e.preventDefault()
 
     axios.post('/api/applicants', this.state.formData)
       .then(res => {
-        this.props.history.push('/')
+        this.props.history.push('/offers')
       })
       .catch(err => this.setState({ errors: err.response.data.errors}))
   }
@@ -64,6 +121,7 @@ class UserRegister extends React.Component {
             </div>
             <form className="form">
               <h2 className="subtitle is-4 has-text-centered">Register - Step 2 of 2</h2>
+
               <div className="field">
                 <label className="label">Username</label>
                 <div className="control">
@@ -108,14 +166,18 @@ class UserRegister extends React.Component {
 
               <div className="field">
                 <label className="label">Picture</label>
-                <div className="control">
-                  <input
-                    className="input"
-                    type="image"
-                    name="image"
-                    placeholder="eg: Ada-Lovelace-Profile.jpg"
-                    onChange={this.handleChange}
-                  />
+                <div className="Dropzone upload-box">
+                  <div className="uploadbutton">
+                    <ReactFilestack
+                      mode="transform"
+                      apikey={fileKEY}
+                      buttonClass="button"
+                      options={imageUpload}
+                      onSuccess={(e) => this.handleUploadImages(e)}
+                      preload={true}
+                    />
+                    <div><span id="progress"></span></div>
+                  </div>
                 </div>
                 {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
               </div>
@@ -193,14 +255,18 @@ class UserRegister extends React.Component {
               </div>
 
               <div className="field">
-                <label className="label">CV</label>
-                <div className="control">
-                  <input
-                    className="input"
-                    type="file"
-                    name="cv"
-                    onChange={this.handleChange}
-                  />
+                <label className="label">Upload your CV</label>
+                <div className="Dropzone upload-box">
+                  <div className="uploadbutton">
+                    <ReactFilestack
+                      mode="transform"
+                      apikey={fileKEY}
+                      buttonClass="button"
+                      onSuccess={(e) => this.handleUploadCv(e)}
+                      preload={true}
+                    />
+                    <div><span id="progress"></span></div>
+                  </div>
                 </div>
                 {this.state.errors.cv && <small className="help is-danger">{this.state.errors.cv}</small>}
               </div>
@@ -208,19 +274,23 @@ class UserRegister extends React.Component {
               <div className="field">
                 <label className="label">Technologies:</label>
                 <div className="control">
-                  <input
-                    className="input"
-                    type="text"
+                  <Select
+                    isMulti
+                    isSearchable
                     name="skills"
-                    placeholder="30"
-                    onChange={this.handleChange}
+                    closeMenuOnSelect={false}
+                    components={animatedComponents}
+                    onChange={this.handleChangeSkills}
+                    options={skills}
                   />
                 </div>
                 {this.state.errors.skills && <small className="help is-danger">{this.state.errors.skills}</small>}
               </div>
+
               <div className="has-text-centered">
                 <button className="button is-danger is-outlined" onClick={this.handleSubmit}>Register</button>
               </div>
+
             </form>
           </div>
         </div>

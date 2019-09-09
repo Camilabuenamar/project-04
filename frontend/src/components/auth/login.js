@@ -58,13 +58,13 @@ class Login extends React.Component {
             <form className="form" onSubmit={this.handleSubmit}>
               <h2 className="subtitle is-4 has-text-centered">Login</h2>
               <div className="field">
-                <label className="label">Email</label>
+                <label className="label">Username</label>
                 <div className="control">
                   <input
                     className="input"
-                    type="email"
-                    name="email"
-                    placeholder="eg: ada.lovelace@techmail.com"
+                    type="text"
+                    name="username"
+                    placeholder="eg: ada.lovelace"
                     onChange={this.handleChange}
                   />
                 </div>
