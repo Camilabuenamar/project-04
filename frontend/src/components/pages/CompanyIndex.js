@@ -49,7 +49,7 @@ class CompanyIndex extends React.Component {
     const reCom = new RegExp(searchTermCom, 'i')
     const [field, order] = sortTerm.split('|')
     const filterCompanies = _.filter(this.state.companies, company => {
-      return (reCom.test(company.name)) && (industry == company.industry)
+      return (reCom.test(company.name)) && (industry === company.industry)
     })
 
     const sortedCompanies = _.orderBy(filterCompanies, [field], [order])
@@ -61,7 +61,7 @@ class CompanyIndex extends React.Component {
     return (
       <section className="section">
         <Navbar/>
-        <div className="container">
+        <div className="container has-navbar-fixed-top">
           <div className="filters">
             <form>
               <div className="field is-grouped is-grouped-centered">
@@ -114,9 +114,9 @@ class CompanyIndex extends React.Component {
                   industry={company.industry}
                   description={company.description}
                   website={company.website}
-                  women_achievements={company.women_achievements}
+                  womenAchievements={company.women_achievements}
                   employees={company.employees}
-                  women_employees_percentaje={company.women_employees_percentaje}
+                  womenEmployeesPercentaje={company.women_employees_percentaje}
                 />
               </span>
             </div>

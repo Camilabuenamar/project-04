@@ -54,7 +54,7 @@ class UserIndex extends React.Component {
       },
       applicants: []
     },
-    this.filterUsers = this.filterUsers.bind(this)
+    this.filterApplicants = this.filterApplicants.bind(this)
     this.handleKeyUpUser = this.handleKeyUpUser.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeRole = this.handleChangeRole.bind(this)
@@ -89,7 +89,7 @@ class UserIndex extends React.Component {
 
   }
 
-  filterOffers() {
+  filterApplicants() {
     const { searchTerm, technologies, sortTerm, roles } = this.state.filterData
     const re = new RegExp(searchTerm, 'i')
     const [field, order] = sortTerm.split('|')
@@ -104,11 +104,11 @@ class UserIndex extends React.Component {
 
   render() {
     console.log(this.state.filterData)
-    console.log(this.filterCompanies())
+    console.log(this.filterApplicants())
     return (
       <section className="section">
         <Navbar/>
-        <div className="container">
+        <div className="container has-navbar-fixed-top">
           <div className="filters">
             <form>
               <div className="field is-grouped is-grouped-centered">

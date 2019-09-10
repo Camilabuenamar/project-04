@@ -34,7 +34,7 @@ class UserProfile extends React.Component {
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <Navbar/>
-          <div className="container">
+          <div className="container has-navbar-fixed-top">
             <div>
               <h2 className="title">Your Profile</h2>
               <figure className="image">

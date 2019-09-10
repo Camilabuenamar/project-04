@@ -35,6 +35,11 @@ class Auth {
     return payload && now < payload.exp
   }
 
+  static getCurrentUserId() {
+    const payload = this.getPayload()
+    return payload && payload.sub
+  }
+
   static isCurrentUser(user) {
     const payload = this.getPayload()
     return payload && user._id === payload.sub

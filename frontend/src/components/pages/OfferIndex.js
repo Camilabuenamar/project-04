@@ -48,7 +48,6 @@ class OfferIndex extends React.Component {
     this.handleKeyUpCompany = this.handleKeyUpCompany.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeTechnologies = this.handleChangeTechnologies.bind(this)
-    this.handleCheckbox = this.handleCheckbox.bind(this)
   }
 
   componentDidMount() {
@@ -90,14 +89,14 @@ class OfferIndex extends React.Component {
     const sortedOffers = _.orderBy(filterOffers, [field], [order])
     return sortedOffers
   }
-  
+
   render() {
     console.log(this.state.filterData)
     console.log(this.filterOffers())
     return (
       <section className="section">
         <Navbar/>
-        <div className="container">
+        <div className="container has-navbar-fixed-top">
           <div className="filters">
             <form>
               <div className="field is-grouped is-grouped-centered">

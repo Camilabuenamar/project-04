@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ApplicantCard = ({ firstname, lastname, headline, roles, skills }) => {
+const UserCard = ({ firstname, lastname, headline, roles, skills }) => {
   return (
     <div className="box">
       <div className="card-header">
@@ -20,4 +20,4 @@ const ApplicantCard = ({ firstname, lastname, headline, roles, skills }) => {
   )
 }
 
-export default ApplicantCard
+export default UserCard
