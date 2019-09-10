@@ -4,11 +4,11 @@ import CompanyModal from '../modals/CompanyDetail'
 
 const CompanyCard = ({ key, name, logo, location, industry, womenAchievements }) => {
   return (
-    <div className="button">
+    <div className="box">
       <div className="media">
         <div className="media-left">
           <figure className="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image" />
+            <img src={logo} alt={name} />
           </figure>
         </div>
         <div className="media-content">
@@ -19,7 +19,6 @@ const CompanyCard = ({ key, name, logo, location, industry, womenAchievements })
             <h2 className="content text">{womenAchievements}</h2>
           </div>
         </div>
-
       </div>
     </div>
   )

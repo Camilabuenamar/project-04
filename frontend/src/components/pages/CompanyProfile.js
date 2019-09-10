@@ -33,7 +33,6 @@ class CompanyProfile extends React.Component {
       <section className="hero is-large has-background">
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
-          <Navbar/>
           <div className="container has-navbar-fixed-top">
             <div>
               <h2 className="title">Company Profile</h2>

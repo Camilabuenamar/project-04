@@ -12,7 +12,8 @@ class CompanyIndex extends React.Component {
     this.state = {
       filterData: {
         searchTermCom: '',
-        sortTerm: 'name|asc'
+        sortTerm: 'name|asc',
+        industry: 'all'
       },
       companies: []
     },
@@ -49,12 +50,13 @@ class CompanyIndex extends React.Component {
     const reCom = new RegExp(searchTermCom, 'i')
     const [field, order] = sortTerm.split('|')
     const filterCompanies = _.filter(this.state.companies, company => {
-      return (reCom.test(company.name)) && (industry === company.industry)
+      return reCom.test(company.name) && (industry === 'all' ? true  : (industry === company.industry))
     })
 
     const sortedCompanies = _.orderBy(filterCompanies, [field], [order])
-    return this.state.companies
+    return sortedCompanies
   }
+
   render() {
     return (
       <section className="section">
@@ -79,6 +81,7 @@ class CompanyIndex extends React.Component {
                 <label className="label">Industry: </label>
                 <div className="control select">
                   <select className="select" name="industry" onChange={this.handleChangeIndustry}>
+                    <option value="all">All</option>
                     <option value="Consumer Goods and Services">Consumer Goods and Services</option>
                     <option value="B2B Software and Services">B2B Software and Services</option>
                     <option value="Industrial">Industrial</option>
@@ -105,18 +108,20 @@ class CompanyIndex extends React.Component {
               className="column is-half"
             >
               <span className="CompanyCard">
-                <CompanyCard
-                  id={company.id}
-                  name={company.name}
-                  location={company.location}
-                  logo={company.logo}
-                  industry={company.industry}
-                  description={company.description}
-                  website={company.website}
-                  womenAchievements={company.women_achievements}
-                  employees={company.employees}
-                  womenEmployeesPercentaje={company.women_employees_percentaje}
-                />
+                <Link to={`/companies/${company.id}`}>
+                  <CompanyCard
+                    id={company.id}
+                    name={company.name}
+                    location={company.location}
+                    logo={company.logo}
+                    industry={company.industry}
+                    description={company.description}
+                    website={company.website}
+                    womenAchievements={company.women_achievements}
+                    employees={company.employees}
+                    womenEmployeesPercentaje={company.women_employees_percentaje}
+                  />
+                </Link>
               </span>
             </div>
           )}

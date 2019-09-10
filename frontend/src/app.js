@@ -10,6 +10,7 @@ import CompanyRegister from './components/auth/CompanyRegister'
 import UserRegister from './components/auth/UserRegister'
 import OfferIndex from './components/pages/OfferIndex'
 import CompanyIndex from './components/pages/CompanyIndex'
+import CompanyModal from './components/modals/CompanyDetail'
 import UserIndex from './components/pages/UserIndex'
 import UserProfile from './components/pages/UserProfile'
 import CompanyProfile from './components/pages/CompanyProfile'
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Switch>
           <Route path="/userprofile" component={UserProfile} />
           <Route path="/companyprofile" component={CompanyProfile} />
+          <Route path="/companies/:id" component={CompanyModal} />
           <Route path="/applicants" component={UserIndex} />
           <Route path="/companies" component={CompanyIndex} />
           <Route path="/offers" component={OfferIndex} />

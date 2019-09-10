@@ -1,0 +1,46 @@
+{
+	"username": "user2",
+	"email": "user2@gmail.com",
+	"password": "User2.123",
+	"password_confirmation": "User2.123"
+},
+{
+	"username": "company3",
+	"email": "company3@gmail.com",
+	"password": "Company3.123",
+	"password_confirmation": "Company3.123"
+}
+
+{
+	"company": 1,
+	"jobtitle": "JS Developer",
+	"role": "Frontend",
+	"wage": 60000,
+	"experience_in_years": 5,
+	"description_of_role": "Blah blah blah",
+	"technologies": "JavaScript",
+	"qualifications": "SEI",
+	"benefits": "Free breakfast on a Wednesday"
+}
+{
+	"company": 1,
+	"jobtitle": "JS Developer",
+	"role": "Frontend",
+	"wage": 60000,
+	"experience_in_years": 5,
+	"description_of_role": "Blah blah blah",
+	"technologies": "JavaScript",
+	"qualifications": "SEI",
+	"benefits": "Free breakfast on a Wednesday"
+}
+{
+	"company": 1,
+	"jobtitle": "JS Developer",
+	"role": "Frontend",
+	"wage": 60000,
+	"experience_in_years": 5,
+	"description_of_role": "Blah blah blah",
+	"technologies": "JavaScript",
+	"qualifications": "SEI",
+	"benefits": "Free breakfast on a Wednesday"
+}

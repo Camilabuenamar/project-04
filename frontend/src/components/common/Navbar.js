@@ -31,15 +31,12 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <div className="navbar-item">
-              <h1 className="title" id="ada">
-                ADA
-              </h1>
-              <h2 className="subtitle">
-               Women 3.0
-              </h2>
+              <Link to ="/" className="">
+                <img src="https://imgur.com/CJhqZ4U.png" alt="Logo"/>
+              </Link>
             </div>
             <a
               role="button"

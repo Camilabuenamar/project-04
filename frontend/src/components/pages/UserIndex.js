@@ -9,6 +9,7 @@ import axios from 'axios'
 import _ from 'lodash'
 
 const roles = [
+  { value: 'all', label: 'All' },
   { value: 'Frontend', label: 'Frontend' },
   { value: 'Backend', label: 'Backend' },
   { value: 'Full Stack', label: 'Full Stack' },
@@ -50,7 +51,9 @@ class UserIndex extends React.Component {
     this.state = {
       filterData: {
         searchTerm: '',
-        sortTerm: 'firstname|asc'
+        sortTerm: 'firstname|asc',
+        role: 'all',
+        technologies: []
       },
       applicants: []
     },
@@ -90,16 +93,16 @@ class UserIndex extends React.Component {
   }
 
   filterApplicants() {
-    // const { searchTerm, skills, sortTerm, roles } = this.state.filterData
-    // const re = new RegExp(searchTerm, 'i')
-    // const [field, order] = sortTerm.split('|')
-    // const filterApplicants =_.filter(this.state.applicants, applicant => {
-    //   return (skills.length ? _.intersection(applicant.skills, skills).length >= skills.length : true) &&
-    //     (re.test(applicant.firstname) || re.test(applicant.lastname)) && _.intersection(applicant.roles, roles)
-    // })
+    const { searchTerm, skills, sortTerm, roles } = this.state.filterData
+    const re = new RegExp(searchTerm, 'i')
+    const [field, order] = sortTerm.split('|')
+    const filterApplicants =_.filter(this.state.applicants, applicant => {
+      return (skills.length ? _.intersection(applicant.skills, skills).length >= skills.length : true) &&
+        (re.test(applicant.firstname) || re.test(applicant.lastname)) && (roles === 'all' ? true  : (roles === applicant.roles))
+    })
 
-  //   const sortedApplicants = _.orderBy(filterApplicants, [field], [order])
-    return this.state.applicants
+    const sortedApplicants = _.orderBy(filterApplicants, [field], [order])
+    return sortedApplicants
   }
 
   render() {
