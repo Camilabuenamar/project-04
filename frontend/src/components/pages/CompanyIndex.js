@@ -53,15 +53,13 @@ class CompanyIndex extends React.Component {
     })
 
     const sortedCompanies = _.orderBy(filterCompanies, [field], [order])
-    return sortedCompanies
+    return this.state.companies
   }
   render() {
-    console.log(this.state.filterData)
-    console.log(this.filterCompanies())
     return (
       <section className="section">
         <Navbar/>
-        <div className="container has-navbar-fixed-top">
+        <div className="container">
           <div className="filters">
             <form>
               <div className="field is-grouped is-grouped-centered">
@@ -103,11 +101,12 @@ class CompanyIndex extends React.Component {
         <div className="columns is-multiline">
           {this.filterCompanies().map(company =>
             <div
-              key={company.user.username}
+              key={company._id}
               className="column is-half"
             >
               <span className="CompanyCard">
                 <CompanyCard
+                  key={company.id}
                   name={company.name}
                   location={company.location}
                   logo={company.logo}

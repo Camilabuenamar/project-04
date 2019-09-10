@@ -41,7 +41,7 @@ const skills = [
   { value: 'C', label: 'C' }
 ]
 
-const fileKEY = 'SECRET KEY'
+const fileKEY = process.env.FILESTACK_KEY
 
 const imageUpload = {
   accept: 'image/*',
@@ -98,11 +98,11 @@ class UserRegister extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/applicants', this.state.formData)
+    axios.post('/api/applicants/', this.state.formData)
       .then(res => {
         this.props.history.push('/offers')
       })
-      .catch(err => this.setState({ errors: err.response.data.errors}))
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   render() {

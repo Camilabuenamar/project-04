@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import Auth from '../../lib/Auth'
 
 class Register extends React.Component {
 
@@ -28,22 +29,25 @@ class Register extends React.Component {
 
     axios.post('/api/register/', this.state.formData)
       .then(res => {
+        Auth.setToken(res.data.token)
         this.props.history.push('/companyregistration')
       })
-      .catch(err => this.setState({ errors: err.response.data.errors}))
+      .catch(err => this.setState({ errors: err.response.data}))
   }
+
   handleSubmitUser(e) {
     e.preventDefault()
 
     axios.post('/api/register/', this.state.formData)
       .then(res => {
+        Auth.setToken(res.data.token)
         this.props.history.push('/userregistration')
       })
-      .catch(err => this.setState({ errors: err.response.data.errors}))
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   render() {
-    console.log(this.state.formData)
+    console.log(this.state)
     return (
       <section className="hero is-large has-background">
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
@@ -114,7 +118,7 @@ class Register extends React.Component {
                 </div>
                 {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
               </div>
-              <div className="has-text-centered" id="two-buttons">
+              <div className="has-text-centered buttons" id="two-buttons">
                 <button className="button is-danger is-outlined" id="first-button" onClick={this.handleSubmitCompany}>Sign up as Company</button>
                 <button className="button is-danger is-outlined" id="second-button" onClick={this.handleSubmitUser}>Sign up as Applicant</button>
               </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import CompanyModal from '../modals/CompanyDetail'
 
 
-const CompanyCard = ({ name, logo, location, industry, womenAchievements }) => {
+const CompanyCard = ({ key, name, logo, location, industry, womenAchievements }) => {
   return (
     <div className="box">
       <div className="media">
@@ -19,7 +19,7 @@ const CompanyCard = ({ name, logo, location, industry, womenAchievements }) => {
             <h2 className="content text">{womenAchievements}</h2>
           </div>
         </div>
-        <span className="button is-danger"><CompanyModal/></span>
+
       </div>
     </div>
   )

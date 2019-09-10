@@ -27,15 +27,10 @@ class Login extends React.Component {
     axios.post('/api/login/', this.state.formData)
       .then(res => {
         Auth.setToken(res.data.token)
-        Auth.setUser(res.data.user)
-        this.props.history.push({
-          pathname: '/',
-          state: res.data.user
-        })
+        this.props.history.push('/offers')
       })
       .catch(() => {
         Auth.removeToken()
-        Auth.removeUser()
         this.setState({ error: 'Invalid credentials' })
       })
 

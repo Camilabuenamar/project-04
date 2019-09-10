@@ -1,4 +1,5 @@
 import React from 'react'
+import UserModal from '../modals/UserDetail'
 
 
 const UserCard = ({ firstname, lastname, headline, roles, skills }) => {
@@ -15,6 +16,7 @@ const UserCard = ({ firstname, lastname, headline, roles, skills }) => {
         <h2 className="subtitle"> <span className="has-text-weight-semibold">Techonologies: </span>
           <div className="tags">{skills.map(skill => <div className="tag" key={skill}>{skill}</div>)}</div>
         </h2>
+        <span className="button is-danger"><UserModal/></span>
       </div>
     </div>
   )

@@ -156,11 +156,12 @@ class UserIndex extends React.Component {
         <div className="columns is-multiline">
           {this.filterApplicants().map(applicant =>
             <div
-              key={applicant.user.username}
+              key={applicant._id}
               className="column is-half"
             >
               <span className="UserCard">
                 <UserCard
+                  key={applicant._id}
                   firstname={applicant.firstname}
                   lastname={applicant.lastname}
                   image={applicant.image}

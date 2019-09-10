@@ -51,7 +51,7 @@ class OfferIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/offers')
+    axios.get('/api/offers/')
       .then(res => this.setState({ offers: res.data}))
   }
 
@@ -151,6 +151,7 @@ class OfferIndex extends React.Component {
             >
               <span className="OfferCard">
                 <OfferCard
+                  key={offer._id}
                   name={offer.company.name}
                   location={offer.company.location}
                   jobtitle={offer.jobtitle}

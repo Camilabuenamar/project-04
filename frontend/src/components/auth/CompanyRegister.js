@@ -2,8 +2,9 @@ import React from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 import ReactFilestack from 'filestack-react'
+import Auth from '../../lib/Auth'
 
-const fileKEY = 'SECRET KEY'
+const fileKEY = process.env.FILESTACK_KEY
 
 const imageUpload = {
   accept: 'image/*',
@@ -48,11 +49,13 @@ class CompanyRegister extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/companies', this.state.formData)
+    axios.post('/api/companies/', this.state.formData, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
       .then(res => {
-        this.props.history.push('/')
+        this.props.history.push('/companies')
       })
-      .catch(err => this.setState({ errors: err.response.data.errors}))
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   render() {
@@ -71,19 +74,6 @@ class CompanyRegister extends React.Component {
             </div>
             <form className="form">
               <h2 className="subtitle is-4 has-text-centered">Register - Step 2 of 2</h2>
-              <div className="field">
-                <label className="label">Username</label>
-                <div className="control">
-                  <input
-                    className="input"
-                    name="username"
-                    type="username"
-                    placeholder="eg: ada.lovelace"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
-              </div>
 
               <div className="field">
                 <label className="label">Company Name</label>
