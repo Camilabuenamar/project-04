@@ -101,12 +101,12 @@ class CompanyIndex extends React.Component {
         <div className="columns is-multiline">
           {this.filterCompanies().map(company =>
             <div
-              key={company._id}
+              key={company.id}
               className="column is-half"
             >
               <span className="CompanyCard">
                 <CompanyCard
-                  key={company.id}
+                  id={company.id}
                   name={company.name}
                   location={company.location}
                   logo={company.logo}

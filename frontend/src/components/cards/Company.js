@@ -4,7 +4,7 @@ import CompanyModal from '../modals/CompanyDetail'
 
 const CompanyCard = ({ key, name, logo, location, industry, womenAchievements }) => {
   return (
-    <div className="box">
+    <div className="button">
       <div className="media">
         <div className="media-left">
           <figure className="image is-64x64">

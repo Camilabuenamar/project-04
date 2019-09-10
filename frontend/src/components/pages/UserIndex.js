@@ -54,7 +54,7 @@ class UserIndex extends React.Component {
       },
       applicants: []
     },
-    this.filterApplicants = this.filterApplicants.bind(this)
+    // this.filterApplicants = this.filterApplicants.bind(this)
     this.handleKeyUpUser = this.handleKeyUpUser.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeRole = this.handleChangeRole.bind(this)
@@ -78,8 +78,8 @@ class UserIndex extends React.Component {
   }
 
   handleChangeTechnologies(selectedTechnologies) {
-    const technologies = selectedTechnologies.map(technologies => technologies.value)
-    const filterData = { ...this.state.filterData, skills: technologies}
+    const skills = selectedTechnologies.map(skills => skills.value)
+    const filterData = { ...this.state.filterData, skills: skills}
     this.setState({ filterData })
   }
 
@@ -90,21 +90,21 @@ class UserIndex extends React.Component {
   }
 
   filterApplicants() {
-    const { searchTerm, technologies, sortTerm, roles } = this.state.filterData
-    const re = new RegExp(searchTerm, 'i')
-    const [field, order] = sortTerm.split('|')
-    const filterApplicants =_.filter(this.state.applicants, applicant => {
-      return (technologies.length ? _.intersection(applicant.skills, technologies).length >= technologies.length : true) &&
-        (re.test(applicant.firstname) || re.test(applicant.lastname)) && _.intersection(applicant.roles, roles)
-    })
+    // const { searchTerm, skills, sortTerm, roles } = this.state.filterData
+    // const re = new RegExp(searchTerm, 'i')
+    // const [field, order] = sortTerm.split('|')
+    // const filterApplicants =_.filter(this.state.applicants, applicant => {
+    //   return (skills.length ? _.intersection(applicant.skills, skills).length >= skills.length : true) &&
+    //     (re.test(applicant.firstname) || re.test(applicant.lastname)) && _.intersection(applicant.roles, roles)
+    // })
 
-    const sortedApplicants = _.orderBy(filterApplicants, [field], [order])
-    return sortedApplicants
+  //   const sortedApplicants = _.orderBy(filterApplicants, [field], [order])
+    return this.state.applicants
   }
 
   render() {
     console.log(this.state.filterData)
-    console.log(this.filterApplicants())
+    console.log(this.state.applicants)
     return (
       <section className="section">
         <Navbar/>
@@ -156,12 +156,12 @@ class UserIndex extends React.Component {
         <div className="columns is-multiline">
           {this.filterApplicants().map(applicant =>
             <div
-              key={applicant._id}
+              key={applicant.id}
               className="column is-half"
             >
               <span className="UserCard">
                 <UserCard
-                  key={applicant._id}
+                  id={applicant.id}
                   firstname={applicant.firstname}
                   lastname={applicant.lastname}
                   image={applicant.image}

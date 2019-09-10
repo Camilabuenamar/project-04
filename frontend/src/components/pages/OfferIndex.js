@@ -146,12 +146,12 @@ class OfferIndex extends React.Component {
         <div className="columns is-multiline">
           {this.filterOffers().map(offer =>
             <div
-              key={offer._id}
+              key={offer.id}
               className="column is-half"
             >
               <span className="OfferCard">
                 <OfferCard
-                  key={offer._id}
+                  id={offer.id}
                   name={offer.company.name}
                   location={offer.company.location}
                   jobtitle={offer.jobtitle}
