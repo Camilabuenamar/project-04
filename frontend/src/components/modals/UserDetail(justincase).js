@@ -29,9 +29,11 @@ class ApplicantModal extends React.Component {
           </header>
           <section clasName="modal-card-body">
             <figure className="image">
-              <img src={this.state.applicant.image} alt={this.state.applicant.firstname} />
+              <img src={this.state.applicant.image} alt={this.state.applicant.user.username} />
             </figure>
             <h2>{this.state.applicant.headline}</h2>
+            <h3 className="subtitle"><span className="has-text-weight-semibold">Desired roles:</span><div className="tags">{this.state.offer.roles.map(role => <div className="tag" key={role}>{role}</div>)}</div></h3>
+            <h3 className="subtitle"><span className="has-text-weight-semibold">Technologies:</span><div className="tags">{this.state.offer.skills.map(skill => <div className="tag" key={skill}>{skill}</div>)}</div></h3>
             <div className="buttons has-text-centered">
               <a  href={this.state.applicant.github} className="button is-medium is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img src="https://i.imgur.com/Y0Mskai.png" alt="GithubLogo"/>GitHub</a>
               <a  href={this.state.applicant.linkedin} className="button is-medium is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/>LinkedIn</a>
