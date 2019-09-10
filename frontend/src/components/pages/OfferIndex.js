@@ -150,19 +150,21 @@ class OfferIndex extends React.Component {
               className="column is-half"
             >
               <span className="OfferCard">
-                <OfferCard
-                  id={offer.id}
-                  name={offer.company.name}
-                  location={offer.company.location}
-                  jobtitle={offer.jobtitle}
-                  role={offer.role}
-                  wage={offer.wage}
-                  experience={offer.experience_in_years}
-                  description={offer.description_of_role}
-                  qualifications={offer.qualifications}
-                  benefits={offer.benefits}
-                  technologies={offer.technologies}
-                />
+                <Link to={`/offers/${offer.id}`}>
+                  <OfferCard
+                    id={offer.id}
+                    name={offer.company.name}
+                    location={offer.company.location}
+                    jobtitle={offer.jobtitle}
+                    role={offer.role}
+                    wage={offer.wage}
+                    experience={offer.experience_in_years}
+                    description={offer.description_of_role}
+                    qualifications={offer.qualifications}
+                    benefits={offer.benefits}
+                    technologies={offer.technologies}
+                  />
+                </Link>
               </span>
             </div>
           )}
