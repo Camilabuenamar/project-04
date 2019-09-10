@@ -43,6 +43,6 @@ module.exports = {
       filename: 'index.html',
       inject: 'body'
     }),
-    envs
+    env
   ]
 }
