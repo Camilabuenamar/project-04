@@ -33,12 +33,19 @@ class Login extends React.Component {
         Auth.removeToken()
         this.setState({ error: 'Invalid credentials' })
       })
+  }
 
+  componentDidMount() {
+    document.documentElement.classList.remove('has-navbar-fixed-top')
+  }
+
+  componentWillUnmount() {
+    document.documentElement.classList.add('has-navbar-fixed-top')
   }
 
   render() {
     return (
-      <section className="hero is-large has-background">
+      <section className="hero has-background">
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <div className="container">

@@ -151,6 +151,8 @@ class UserIndex extends React.Component {
                         <option value="lastname|desc"> Lastname Z - A</option>
                       </select>
                     </div>
+                  </div>
+                  <div className="field is-grouped is-grouped-centered">
                     <label className="label">Role: </label>
                     <div className="control">
                       <Select
@@ -160,6 +162,7 @@ class UserIndex extends React.Component {
                         components={animatedComponents}
                         onChange={this.handleChange}
                         options={roles}
+                        className="react-select"
                       />
                     </div>
                     <label className="label">Technologies: </label>
@@ -172,6 +175,7 @@ class UserIndex extends React.Component {
                         components={animatedComponents}
                         onChange={this.handleChangeTechnologies}
                         options={technologies}
+                        className="react-select"
                       />
                     </div>
                   </div>
@@ -212,8 +216,8 @@ class UserIndex extends React.Component {
             </div>
           </div>
           <div className="column is-one-third"> {(this.state.specificapplicant !== '-') &&
-            <div className="tile is-parent">
-              <article className="tile is-child notification is-danger is-bold">
+            <div className="tile is-parent box">
+              <article className="tile is-child is-danger is-bold">
                 <div className="content">
                   <br/>
                   <div className="level">
@@ -222,18 +226,19 @@ class UserIndex extends React.Component {
                     </figure>
                   </div>
                   <br/>
-                  <p className="title has-text-dark">{this.state.specificapplicant.firstname} {this.state.specificapplicant.lastname}</p>
+                  <p className="title has-text-danger">{this.state.specificapplicant.firstname} {this.state.specificapplicant.lastname}</p>
                   <p className="subtitle is-6">{this.state.specificapplicant.headline}</p>
                   <div className="content">
                     <h3 className="subtitle"><span className="has-text-weight-semibold">Desired roles:</span><div className="tags">{this.state.specificapplicant.roles.map(role => <div className="tag" key={role}>{role}</div>)}</div></h3>
                     <h3 className="subtitle"><span className="has-text-weight-semibold">Technologies:</span><div className="tags">{this.state.specificapplicant.skills.map(skill => <div className="tag" key={skill}>{skill}</div>)}</div></h3>
                     <div className="buttons has-text-centered">
-                      <a  href={this.state.specificapplicant.github} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Y0Mskai.png" alt="GithubLogo"/>GitHub</a>
-                      <a  href={this.state.specificapplicant.linkedin} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/>LinkedIn</a>
-                      <a  href={this.state.specificapplicant.portfolio} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Portfolio</a>
-                      <a  href={this.state.specificapplicant.cv} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Rn77cJl.png" alt="CV"/>Download CV</a>
+                      <a  href={this.state.specificapplicant.github} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Y0Mskai.png" alt="GithubLogo"/>GitHub</a>
+                      <a  href={this.state.specificapplicant.linkedin} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/>LinkedIn</a>
+                      <a  href={this.state.specificapplicant.portfolio} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Portfolio</a>
+                      <a  href={this.state.specificapplicant.cv} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Rn77cJl.png" alt="CV"/>Download CV</a>
                     </div>
                   </div>
+                  <button className="button is-danger is-fullwidth"> ✉️Contact</button>
                 </div>
               </article>
             </div> }

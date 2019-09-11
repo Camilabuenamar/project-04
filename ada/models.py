@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from multiselectfield import MultiSelectField
+from django.contrib.postgres.fields import ArrayField
 
 
 # Create your models here.
@@ -43,12 +43,12 @@ class Applicant(models.Model):
     lastname = models.CharField(max_length=50)
     image = models.CharField(max_length=1000, blank=True)
     headline = models.CharField(max_length=250)
-    roles = MultiSelectField(choices=ROLE_CHOICES)
+    roles = ArrayField(models.CharField(max_length=30, choices=ROLE_CHOICES))
     linkedin = models.URLField()
     portfolio = models.URLField()
     github = models.URLField()
     cv = models.CharField(max_length=1000)
-    skills = MultiSelectField(choices=TECHNOLOGY_CHOICES)
+    skills = ArrayField(models.CharField(max_length=30, choices=TECHNOLOGY_CHOICES))
 
     def __str__(self):
         return self.user.username
@@ -123,7 +123,7 @@ class Offer(models.Model):
     wage = models.IntegerField()
     experience_in_years = models.IntegerField()
     description_of_role = models.CharField(max_length=1000)
-    technologies = MultiSelectField(choices=TECHNOLOGY_CHOICES)
+    technologies = ArrayField(models.CharField(max_length=30, choices=TECHNOLOGY_CHOICES))
     qualifications = models.CharField(max_length=1000)
     benefits = models.CharField(max_length=1000)
     applications_received = models.ManyToManyField(Applicant, related_name='offers', blank=True)

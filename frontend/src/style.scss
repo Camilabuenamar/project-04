@@ -8,7 +8,7 @@
 
 .logoicon {
   margin-left: 45px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -63,7 +63,19 @@
   opacity: 0.3;
 }
 
+.hero.has-background {
+  overflow: visible;
+}
+
 .form {
   margin: auto;
   width: 500px;
+}
+
+.react-select {
+  width: 400px;
+}
+
+#tile {
+  background-color: #e65774;
 }

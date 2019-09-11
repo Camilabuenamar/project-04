@@ -154,8 +154,8 @@ class CompanyIndex extends React.Component {
             </div>
           </div>
           <div className="column is-one-third"> {(this.state.specificcompany !== '-') &&
-            <div className="tile is-parent">
-              <article className="tile is-child notification is-danger is-bold">
+            <div className="tile box is-parent">
+              <article className="tile is-child is-danger is-bold">
                 <div className="content">
                   <br/>
                   <div className="level">
@@ -164,7 +164,7 @@ class CompanyIndex extends React.Component {
                     </figure>
                   </div>
                   <br/>
-                  <p className="title has-text-dark">{this.state.specificcompany.name}</p>
+                  <p className="title has-text-danger">{this.state.specificcompany.name}</p>
                   <p className="subtitle is-6">{this.state.specificcompany.description}</p>
                   <div className="content">
                     <p className="content text"><span className="has-text-weight-semibold">Location: </span>{this.state.specificcompany.location}</p>
@@ -172,9 +172,11 @@ class CompanyIndex extends React.Component {
                     <p className="content text"><span className="has-text-weight-semibold">Efforts on women equality: </span>{this.state.specificcompany.women_achievements}</p>
                     <p className="content text"><span className="has-text-weight-semibold">Number of employees: </span>{this.state.specificcompany.employees}</p>
                     <p className="content text"><span className="has-text-weight-semibold">percentage of women employees: </span>{this.state.specificcompany.women_employees_percentaje}</p>
-                    <a  href={this.state.specificcompany.website} className="button is-medium is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Website</a>
+                    <a  href={this.state.specificcompany.website} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Website</a>
+                    <br/>
                   </div>
                 </div>
+                <button className="button is-fullwidth is-danger ">See Offers</button>
               </article>
             </div> }
           </div>

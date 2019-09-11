@@ -1,0 +1,50 @@
+[
+{
+  "model": "ada.company",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "name": "Company ONE",
+    "logo": "https://www.one-line.com/themes/custom/one/logo.svg",
+    "location": "London, UK",
+    "industry": "Consumer Goods and Services",
+    "description": "Synthetic Minds is building techniques that auto-generate software, for specific domains, using very little input. The technical domain is called program synthesis, and we have some of the world's experts working with us. Program synthesis has applications in finance, smart contracts, robotics, and programming for non-programmers. We are currently focused on smart contracts.  In Oct 2018, we raised a $5.6M seed round from Y Combinator, Khosla Ventures and Pantera Capital. We have a working product and a backlog of customers. This is the founder\u2019s second YC startup and they have a PhD in the domain. Other team members include an ex-Googler with 10 yrs experience (also the first hire at Parse, YC S11) and a UCB PhD, also ex-Google. We will be a 15 person all-engineering team in 2019.",
+    "website": "https://www.one-line.com",
+    "women_achievements": "",
+    "employees": 3,
+    "women_employees_percentaje": 33
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "name": "TWO",
+    "logo": "https://two.jobs/wp-content/uploads/2019/04/two-300x156.png",
+    "location": "London, UK",
+    "industry": "B2B Software and Services",
+    "description": "We are on a mission to change the way that legal disputes are resolved by financing attorneys and plaintiffs who can't afford the high costs of litigation, leveling the playing field, and moving the legal system to more equitable outcomes. We fund lawsuits, and we want to see plaintiffs with meritorious lawsuits get justice.  We're a team of engineers, lawyers, finance gurus, and data scientists who make real-time investment decisions in a fast-paced environment. If you're a smart, cross-disciplinary thinker and doer, you should contact us.  Welcome to Legalist, the world's first AI-backed litigation funder.",
+    "website": "https://two.jobs",
+    "women_achievements": "EDGE Certification (2017), NES (2018) & Official Sponsor of Women in Tech London.",
+    "employees": 14,
+    "women_employees_percentaje": 20
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "name": "T.H.R.E.E",
+    "logo": "https://www.freeenterprisewarriors.com/wp-content/uploads/2012/06/3logo.jpg",
+    "location": "San Francisco, CA",
+    "industry": "Healthcare",
+    "description": "SmartSpot is a post Series-A stealth startup backed by Founders Fund and Khosla Ventures that uses computer vision to deliver an unparalleled fitness training experience to your home. Our unique hardware solution gives amazing trainers the ability to see their class participants in real time and deliver detailed advice that was previously only possible in person.",
+    "website": "http://smartspot.io",
+    "women_achievements": "",
+    "employees": 11,
+    "women_employees_percentaje": 5
+  }
+}
+]

@@ -46,10 +46,17 @@ class Register extends React.Component {
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
+  componentDidMount() {
+    document.documentElement.classList.remove('has-navbar-fixed-top')
+  }
+
+  componentWillUnmount() {
+    document.documentElement.classList.add('has-navbar-fixed-top')
+  }
+
   render() {
-    console.log(this.state)
     return (
-      <section className="hero is-large has-background">
+      <section className="hero has-background">
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <div className="container">

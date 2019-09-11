@@ -154,11 +154,12 @@ class OfferIndex extends React.Component {
                         components={animatedComponents}
                         onChange={this.handleChangeTechnologies}
                         options={technologies}
+                        className="react-select"
                       />
                     </div>
-                    <label className="label">Find a match with your skills: </label>
+                    <label className="label">Find a match for your skills: </label>
                     <div className="control">
-                      <button className=" control button is-danger is-outlined">Yes, please</button>
+                      <button className="button is-danger">Yes, please</button>
                     </div>
                   </div>
                 </form>
@@ -198,22 +199,20 @@ class OfferIndex extends React.Component {
             </div>
           </div>
           <div className="column is-one-third"> {(this.state.specificoffer !== '-') &&
-            <div className="tile is-parent">
-              <article className="tile is-child notification is-danger is-bold">
+            <div className="tile is-parent box">
+              <article className="tile is-child is-danger is-bold">
                 <div className="content">
-                  <p className="title has-text-dark">{this.state.specificoffer.jobtitle} - {this.state.specificoffer.company.name}</p>
+                  <p className="title has-text-danger is-4">{this.state.specificoffer.jobtitle} - {this.state.specificoffer.company.name}</p>
                   <p className="subtitle has-text-dark">{this.state.specificoffer.role}</p>
-                  <p className="subtitle is-6">{this.state.specificoffer.description_of_role}</p>
+                  <p className="content text"><span className="has-text-weight-semibold">Technologies required: </span><div className="tags">{this.state.specificoffer.technologies.map(technology => <div className="tag" key={technology}>{technology}</div>)}</div></p>
                   <div className="content">
-                    <p>{this.state.specificoffer.role}</p>
                     <p className="content text"><span className="has-text-weight-semibold">Location: </span>{this.state.specificoffer.company.location}</p>
-                    <p className="content text"><span className="has-text-weight-semibold">Technologies required: </span><div className="tags">{this.state.specificoffer.technologies.map(technology => <div className="tag" key={technology}>{technology}</div>)}</div></p>
                     <p className="content text"><span className="has-text-weight-semibold">Description of the role: </span>{this.state.specificoffer.description_of_role}</p>
                     <p className="content text"><span className="has-text-weight-semibold">Qualifications: </span>{this.state.specificoffer.qualifications}</p>
                     <p className="content text"><span className="has-text-weight-semibold">Benefits: </span>{this.state.specificoffer.benefits}</p>
-                    <p className="content text"><span className="has-text-weight-semibold">Previous experience: </span>{this.state.specificoffer.experience_in_years}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Previous years of experience: </span>{this.state.specificoffer.experience_in_years}</p>
                     <p className="content text"><span className="has-text-weight-semibold">Wage: </span> $ {this.state.specificoffer.wage}</p>
-                    <button clasName="button is-danger is-inverted">Apply</button>
+                    <button className="button is-fullwidth is-danger ">Apply</button>
                   </div>
                 </div>
               </article>

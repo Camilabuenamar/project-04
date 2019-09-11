@@ -2,6 +2,15 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 class Home extends React.Component {
+
+  componentDidMount() {
+    document.documentElement.classList.remove('has-navbar-fixed-top')
+  }
+
+  componentWillUnmount() {
+    document.documentElement.classList.add('has-navbar-fixed-top')
+  }
+
   render() {
     return (
       <section className="hero is-large has-background">
