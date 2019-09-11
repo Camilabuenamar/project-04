@@ -2,7 +2,7 @@ import React from 'react'
 import CompanyModal from '../modals/CompanyDetail'
 
 
-const CompanyCard = ({ key, name, logo, location, industry, womenAchievements }) => {
+const CompanyCard = ({ id, name, logo, location, industry, womenAchievements, onClick }) => {
   return (
     <div className="box company-box card-equal-heigh">
       <div className="media ">
@@ -19,6 +19,7 @@ const CompanyCard = ({ key, name, logo, location, industry, womenAchievements })
           </div>
         </div>
       </div>
+      <button value={id} onClick={onClick}>See more</button>
     </div>
   )
 }

@@ -25,13 +25,10 @@ class CompanyModal extends React.Component {
       <section className="section">
         <div className="container">
           <header clasName="modal-card-head">
-            <p clasName="modal-card-title">{this.state.offer.jobtitle} - {this.state.offer.company.name[0]}</p>
+
           </header>
           <section clasName="modal-card-body">
             <h2>{this.state.offer.role}</h2>
-            <h3 className="content text"><span className="has-text-weight-semibold">Location:</span>{this.state.offer.company}</h3>
-            <h3 className="content text"><span className="has-text-weight-semibold">Technologies required:</span><div className="tags">{this.state.offer.technologies.map(technology => <div className="tag" key={technology}>{technology}</div>)}</div></h3>
-            <h3 className="content text"><span className="has-text-weight-semibold">Description of the role:</span>{this.state.offer.description_of_role}</h3>
             <h3 className="content text"><span className="has-text-weight-semibold">Qualifications:</span>{this.state.offer.qualifications}</h3>
             <h3 className="content text"><span className="has-text-weight-semibold">Benefits:</span>{this.state.offer.benefits}</h3>
             <h3 className="content text"><span className="has-text-weight-semibold">Previous experience:</span>{this.state.offer.experience_in_years}</h3>

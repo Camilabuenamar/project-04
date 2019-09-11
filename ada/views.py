@@ -39,7 +39,7 @@ class ApplicantDetail(APIView):
 
     def get(self, _request, pk):
         applicant = self.get_applicant(pk)
-        serializer = ApplicantSerializer(applicant)
+        serializer = PopulatedApplicantSerializer(applicant)
         return Response(serializer.data)
 
     def put(self, request, pk):
@@ -88,7 +88,7 @@ class CompanyDetail(APIView):
 
     def get(self, _request, pk):
         company = self.get_company(pk)
-        serializer = CompanySerializer(company)
+        serializer = PopulatedCompanySerializer(company)
         return Response(serializer.data)
 
     def put(self, request, pk):
@@ -137,7 +137,7 @@ class OfferDetail(APIView):
 
     def get(self, _request, pk):
         offer = self.get_offer(pk)
-        serializer = OfferSerializer(offer)
+        serializer = PopulatedOfferSerializer(offer)
         return Response(serializer.data)
 
     def put(self, request, pk):

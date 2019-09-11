@@ -58,9 +58,10 @@ class CompanyIndex extends React.Component {
   }
 
   showCompany(e){
-    console.log(e)
-    // axios.get(`/api/companies/${company.id}`)
-    //   .then(res => this.setState({ company: res.data}))
+    console.log(e.target.value)
+    axios.get(`/api/companies/${e.target.value}/`)
+      .then(res => this.setState({ specificcompany: res.data}))
+      .then(console.log(this.state.specificcompany))
   }
 
   render() {
@@ -128,9 +129,10 @@ class CompanyIndex extends React.Component {
               key={company.id}
               className="column is-one-third"
             >
-              <span className="CompanyCard" value={company.id} onClick={this.showCompany}>
-
+              <span className="CompanyCard">
+                <div>
                   <CompanyCard
+                    onClick={this.showCompany}
                     id={company.id}
                     name={company.name}
                     location={company.location}
@@ -142,7 +144,7 @@ class CompanyIndex extends React.Component {
                     employees={company.employees}
                     womenEmployeesPercentaje={company.women_employees_percentaje}
                   />
-
+                </div>
               </span>
             </div>
           )}
