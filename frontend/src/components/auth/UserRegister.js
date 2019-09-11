@@ -5,6 +5,9 @@ import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 const animatedComponents = makeAnimated()
 import ReactFilestack from 'filestack-react'
+import Auth from '../../lib/Auth'
+
+const FILESTACK_KEY = process.env.FILESTACK_KEY
 
 const roles = [
   { value: 'Frontend', label: 'Frontend' },
@@ -20,7 +23,7 @@ const roles = [
 ]
 
 const skills = [
-  { value: 'Javascript', label: 'Javascript' },
+  { value: 'JavaScript', label: 'JavaScript' },
   { value: 'Python', label: 'Python' },
   { value: 'React', label: 'React' },
   { value: 'Java', label: 'Java' },
@@ -29,7 +32,7 @@ const skills = [
   { value: 'Node.js', label: 'Node.js' },
   { value: 'CSS', label: 'CSS' },
   { value: 'MySQL', label: 'MySQL' },
-  { value: 'Amazon Web Services (AWS)', label: 'Robotics' },
+  { value: 'Amazon Web Services (AWS)', label: 'Amazon Web Services (AWS)' },
   { value: 'C++', label: 'C++' },
   { value: 'PostgreSQL', label: 'PostgreSQL' },
   { value: 'Bash/Shell', label: 'Bash/Shell' },
@@ -41,7 +44,7 @@ const skills = [
   { value: 'C', label: 'C' }
 ]
 
-const fileKEY = process.env.FILESTACK_KEY
+const fileKEY = 'A8aKWU9DhRZWwwjGt0mDkz'
 
 const imageUpload = {
   accept: 'image/*',
@@ -62,11 +65,18 @@ class UserRegister extends React.Component {
   constructor() {
     super()
     this.state = {
-      formData: {},
+      formData: {
+        skills: [],
+        roles: []
+      },
       errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleUploadCv = this.handleUploadCv.bind(this)
+    this.handleUploadImages = this.handleUploadImages.bind(this)
+    this.handleChangeSkills = this.handleChangeSkills.bind(this)
+    this.handleChangeRoles = this.handleChangeRoles.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -80,6 +90,12 @@ class UserRegister extends React.Component {
   handleChangeSkills(selectedSkills) {
     const skills = selectedSkills.map(skills => skills.value)
     const formData = { ...this.state.formData, skills: skills}
+    this.setState({ formData })
+  }
+
+  handleChangeRoles(selectedRoles) {
+    const roles = selectedRoles.map(roles => roles.value)
+    const formData = { ...this.state.formData, roles: roles}
     this.setState({ formData })
   }
 
@@ -98,16 +114,26 @@ class UserRegister extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/applicants/', this.state.formData)
+    axios.post('/api/applicants/', this.state.formData, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
       .then(res => {
-        this.props.history.push('/offers')
+        this.props.history.push('/login')
       })
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
+  componentDidMount() {
+    document.documentElement.classList.remove('has-navbar-fixed-top')
+  }
+
+  componentWillUnmount() {
+    document.documentElement.classList.add('has-navbar-fixed-top')
+  }
+
   render() {
     return (
-      <section className="hero is-large has-background">
+      <section className="hero has-background">
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <div className="container">
@@ -121,20 +147,6 @@ class UserRegister extends React.Component {
             </div>
             <form className="form">
               <h2 className="subtitle is-4 has-text-centered">Register - Step 2 of 2</h2>
-
-              <div className="field">
-                <label className="label">Username</label>
-                <div className="control">
-                  <input
-                    className="input"
-                    name="username"
-                    type="username"
-                    placeholder="eg: ada.lovelace"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
-              </div>
 
               <div className="field">
                 <label className="label">First name</label>
@@ -170,8 +182,9 @@ class UserRegister extends React.Component {
                   <div className="uploadbutton">
                     <ReactFilestack
                       mode="transform"
-                      apikey={fileKEY}
+                      apikey={FILESTACK_KEY}
                       buttonClass="button"
+                      className="button"
                       options={imageUpload}
                       onSuccess={(e) => this.handleUploadImages(e)}
                       preload={true}
@@ -184,8 +197,8 @@ class UserRegister extends React.Component {
 
               <div className="field">
                 <label className="label">Headline</label>
-                <div className="control textarea">
-                  <input
+                <div className="control">
+                  <textarea
                     className="input"
                     type="text"
                     name="headline"
@@ -197,7 +210,7 @@ class UserRegister extends React.Component {
               </div>
 
               <div className="field">
-                <label className="label">Select the roles you are interested in:</label>
+                <label className="label">Select the roles you are interested in: (Pick at least two)</label>
                 <div className="control">
                   <Select
                     isMulti
@@ -205,11 +218,11 @@ class UserRegister extends React.Component {
                     name="roles"
                     closeMenuOnSelect={false}
                     components={animatedComponents}
-                    onChange={this.handleChange}
+                    onChange={this.handleChangeRoles}
                     options={roles}
                   />
                 </div>
-                {this.state.errors.industry && <small className="help is-danger">{this.state.errors.industry}</small>}
+                {this.state.errors.roles && <small className="help is-danger">{this.state.errors.roles}</small>}
               </div>
 
               <div className="field">
@@ -260,7 +273,7 @@ class UserRegister extends React.Component {
                   <div className="uploadbutton">
                     <ReactFilestack
                       mode="transform"
-                      apikey={fileKEY}
+                      apikey={FILESTACK_KEY}
                       buttonClass="button"
                       onSuccess={(e) => this.handleUploadCv(e)}
                       preload={true}

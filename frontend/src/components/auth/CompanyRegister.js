@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import ReactFilestack from 'filestack-react'
 import Auth from '../../lib/Auth'
 
-const fileKEY = process.env.FILESTACK_KEY
+const FILESTACK_KEY = process.env.FILESTACK_KEY
 
 const imageUpload = {
   accept: 'image/*',
@@ -53,14 +53,22 @@ class CompanyRegister extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => {
-        this.props.history.push('/companies')
+        this.props.history.push('/login')
       })
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
+  componentDidMount() {
+    document.documentElement.classList.remove('has-navbar-fixed-top')
+  }
+
+  componentWillUnmount() {
+    document.documentElement.classList.add('has-navbar-fixed-top')
+  }
+
   render() {
     return (
-      <section className="hero is-large has-background">
+      <section className="hero has-background">
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <div className="container">
@@ -95,7 +103,7 @@ class CompanyRegister extends React.Component {
                   <div className="uploadbutton">
                     <ReactFilestack
                       mode="transform"
-                      apikey={fileKEY}
+                      apikey={FILESTACK_KEY}
                       buttonClass="button"
                       options={imageUpload}
                       onSuccess={(e) => this.handleUploadImages(e)}
