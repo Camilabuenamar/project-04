@@ -2,7 +2,7 @@ import React from 'react'
 import OfferModal from '../modals/OfferDetail'
 
 
-const OfferCard = ({ name, location, jobtitle, role, wage, technologies }) => {
+const OfferCard = ({ id, name, location, jobtitle, role, wage, technologies, onClick }) => {
   return (
     <div className="box card-equal-heigh">
       <div className="card-header">
@@ -17,6 +17,7 @@ const OfferCard = ({ name, location, jobtitle, role, wage, technologies }) => {
         </p>
         <h2 className="content text"><span className="has-text-weight-semibold">£ </span>{wage}</h2>
       </div>
+      <button className="button is-fullwidth is-danger is-outlined" value={id} onClick={onClick}>See more</button>
     </div>
   )
 }

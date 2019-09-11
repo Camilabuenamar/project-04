@@ -41,13 +41,15 @@ class OfferIndex extends React.Component {
         sortTerm: 'jobtitle|asc',
         technologies: []
       },
-      burgers: []
+      offers: [],
+      specificoffer: '-'
     },
     this.filterOffers = this.filterOffers.bind(this)
     this.handleKeyUpJobtitle = this.handleKeyUpJobtitle.bind(this)
     this.handleKeyUpCompany = this.handleKeyUpCompany.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeTechnologies = this.handleChangeTechnologies.bind(this)
+    this.showOffer = this.showOffer.bind(this)
   }
 
   componentDidMount() {
@@ -88,6 +90,13 @@ class OfferIndex extends React.Component {
 
     const sortedOffers = _.orderBy(filterOffers, [field], [order])
     return sortedOffers
+  }
+
+  showOffer(e){
+    console.log(e.target.value)
+    axios.get(`/api/offers/${e.target.value}/`)
+      .then(res => this.setState({ specificoffer: res.data}))
+      .then(console.log(this.state.specificoffer))
   }
 
   render() {
@@ -158,31 +167,58 @@ class OfferIndex extends React.Component {
           </div>
         </section>
         <br/>
-        <div className="columns is-multiline">
-          {this.filterOffers().map(offer =>
-            <div
-              key={offer.id}
-              className="column is-one-third"
-            >
-              <span className="OfferCard">
-                <Link to={`/offers/${offer.id}`}>
-                  <OfferCard
-                    id={offer.id}
-                    name={offer.company.name}
-                    location={offer.company.location}
-                    jobtitle={offer.jobtitle}
-                    role={offer.role}
-                    wage={offer.wage}
-                    experience={offer.experience_in_years}
-                    description={offer.description_of_role}
-                    qualifications={offer.qualifications}
-                    benefits={offer.benefits}
-                    technologies={offer.technologies}
-                  />
-                </Link>
-              </span>
+        <div className="columns">
+          <div className="column is-two-thirds">
+            <div className="columns is-multiline">
+              {this.filterOffers().map(offer =>
+                <div
+                  key={offer.id}
+                  className="column is-half"
+                >
+                  <span className="OfferCard">
+                    <div>
+                      <OfferCard
+                        onClick={this.showOffer}
+                        id={offer.id}
+                        name={offer.company.name}
+                        location={offer.company.location}
+                        jobtitle={offer.jobtitle}
+                        role={offer.role}
+                        wage={offer.wage}
+                        experience={offer.experience_in_years}
+                        description={offer.description_of_role}
+                        qualifications={offer.qualifications}
+                        benefits={offer.benefits}
+                        technologies={offer.technologies}
+                      />
+                    </div>
+                  </span>
+                </div>
+              )}
             </div>
-          )}
+          </div>
+          <div className="column is-one-third"> {(this.state.specificoffer !== '-') &&
+            <div className="tile is-parent">
+              <article className="tile is-child notification is-danger is-bold">
+                <div className="content">
+                  <p className="title has-text-dark">{this.state.specificoffer.jobtitle} - {this.state.specificoffer.company.name}</p>
+                  <p className="subtitle has-text-dark">{this.state.specificoffer.role}</p>
+                  <p className="subtitle is-6">{this.state.specificoffer.description_of_role}</p>
+                  <div className="content">
+                    <p>{this.state.specificoffer.role}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Location: </span>{this.state.specificoffer.company.location}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Technologies required: </span><div className="tags">{this.state.specificoffer.technologies.map(technology => <div className="tag" key={technology}>{technology}</div>)}</div></p>
+                    <p className="content text"><span className="has-text-weight-semibold">Description of the role: </span>{this.state.specificoffer.description_of_role}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Qualifications: </span>{this.state.specificoffer.qualifications}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Benefits: </span>{this.state.specificoffer.benefits}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Previous experience: </span>{this.state.specificoffer.experience_in_years}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Wage: </span> $ {this.state.specificoffer.wage}</p>
+                    <button clasName="button is-danger is-inverted">Apply</button>
+                  </div>
+                </div>
+              </article>
+            </div> }
+          </div>
         </div>
       </section>
     )

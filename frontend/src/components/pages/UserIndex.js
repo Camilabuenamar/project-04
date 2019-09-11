@@ -53,11 +53,11 @@ class UserIndex extends React.Component {
         searchTerm: '',
         sortTerm: 'firstname|asc',
         role: 'all',
-        technologies: []
+        skills: []
       },
       applicants: []
     },
-    // this.filterApplicants = this.filterApplicants.bind(this)
+    this.filterApplicants = this.filterApplicants.bind(this)
     this.handleKeyUpUser = this.handleKeyUpUser.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeRole = this.handleChangeRole.bind(this)
@@ -93,12 +93,12 @@ class UserIndex extends React.Component {
   }
 
   filterApplicants() {
-    const { searchTerm, skills, sortTerm, roles } = this.state.filterData
+    const { searchTerm, skills, sortTerm, role } = this.state.filterData
     const re = new RegExp(searchTerm, 'i')
     const [field, order] = sortTerm.split('|')
     const filterApplicants =_.filter(this.state.applicants, applicant => {
       return (skills.length ? _.intersection(applicant.skills, skills).length >= skills.length : true) &&
-        (re.test(applicant.firstname) || re.test(applicant.lastname)) && (roles === 'all' ? true  : (roles === applicant.roles))
+        (re.test(applicant.firstname) || re.test(applicant.lastname)) && (role === 'all' ? true  : (role === applicant.roles))
     })
 
     const sortedApplicants = _.orderBy(filterApplicants, [field], [order])

@@ -25,12 +25,12 @@ class CompanyModal extends React.Component {
       <section className="section">
         <div className="container">
           <header clasName="header">
-            <p clasName="title">{this.state.company.name}</p>
-          </header>
-          <section clasName="">
             <figure className="image">
               <img src={this.state.company.logo} alt={this.state.company.name} />
             </figure>
+            <p clasName="title">{this.state.company.name}</p>
+          </header>
+          <section clasName="">
             <h2>{this.state.company.description}</h2>
             <h3 className="content text"><span className="has-text-weight-semibold">Location:</span>{this.state.company.location}</h3>
             <h3 className="content text"><span className="has-text-weight-semibold">Industry:</span>{this.state.company.industry}</h3>
@@ -38,7 +38,7 @@ class CompanyModal extends React.Component {
             <h3 className="content text"><span className="has-text-weight-semibold">Number of employees:</span>{this.state.company.employees}</h3>
             <h3 className="content text"><span className="has-text-weight-semibold">percentage of women employees:</span>{this.state.company.women_employees_percentaje}</h3>
 
-            <a  href={this.state.company.website} className="button is-medium is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Website</a>
+            <a  href={this.state.company.website} className="button is-medium is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Website</a>
           </section>
         </div>
       </section>

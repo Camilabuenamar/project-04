@@ -19,7 +19,7 @@ const CompanyCard = ({ id, name, logo, location, industry, womenAchievements, on
           </div>
         </div>
       </div>
-      <button value={id} onClick={onClick}>See more</button>
+      <button className="button is-fullwidth is-danger is-outlined" value={id} onClick={onClick}>See more</button>
     </div>
   )
 }

@@ -15,7 +15,8 @@ class CompanyIndex extends React.Component {
         sortTerm: 'name|asc',
         industry: 'all'
       },
-      companies: []
+      companies: [],
+      specificcompany: {}
     },
     this.filterCompanies = this.filterCompanies.bind(this)
     this.handleKeyUpCompany = this.handleKeyUpCompany.bind(this)
@@ -123,31 +124,60 @@ class CompanyIndex extends React.Component {
           </div>
         </section>
         <br/>
-        <div className="columns is-multiline">
-          {this.filterCompanies().map(company =>
-            <div
-              key={company.id}
-              className="column is-one-third"
-            >
-              <span className="CompanyCard">
-                <div>
-                  <CompanyCard
-                    onClick={this.showCompany}
-                    id={company.id}
-                    name={company.name}
-                    location={company.location}
-                    logo={company.logo}
-                    industry={company.industry}
-                    description={company.description}
-                    website={company.website}
-                    womenAchievements={company.women_achievements}
-                    employees={company.employees}
-                    womenEmployeesPercentaje={company.women_employees_percentaje}
-                  />
+        <div className="columns">
+          <div className="column is-two-thirds">
+            <div className="columns is-multiline">
+              {this.filterCompanies().map(company =>
+                <div
+                  key={company.id}
+                  className="column is-half"
+                >
+                  <span className="CompanyCard">
+                    <div>
+                      <CompanyCard
+                        onClick={this.showCompany}
+                        id={company.id}
+                        name={company.name}
+                        location={company.location}
+                        logo={company.logo}
+                        industry={company.industry}
+                        description={company.description}
+                        website={company.website}
+                        womenAchievements={company.women_achievements}
+                        employees={company.employees}
+                        womenEmployeesPercentaje={company.women_employees_percentaje}
+                      />
+                    </div>
+                  </span>
                 </div>
-              </span>
+              )}
             </div>
-          )}
+          </div>
+          <div className="column is-one-third">
+            <div className="tile is-parent">
+              <article className="tile is-child notification is-danger is-bold">
+                <div className="content">
+                  <br/>
+                  <div className="level">
+                    <figure className="level-right image is-96x96">
+                      <img src={this.state.specificcompany.logo} alt={this.state.specificcompany.name} />
+                    </figure>
+                  </div>
+                  <br/>
+                  <p className="title has-text-dark">{this.state.specificcompany.name}</p>
+                  <p className="subtitle is-6">{this.state.specificcompany.description}</p>
+                  <div className="content">
+                    <p className="content text"><span className="has-text-weight-semibold">Location: </span>{this.state.specificcompany.location}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Industry: </span>{this.state.specificcompany.industry}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Efforts on women equality: </span>{this.state.specificcompany.women_achievements}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">Number of employees: </span>{this.state.specificcompany.employees}</p>
+                    <p className="content text"><span className="has-text-weight-semibold">percentage of women employees: </span>{this.state.specificcompany.women_employees_percentaje}</p>
+                    <a  href={this.state.specificcompany.website} className="button is-medium is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Website</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
     )
