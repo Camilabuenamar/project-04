@@ -16,7 +16,7 @@ class CompanyIndex extends React.Component {
         industry: 'all'
       },
       companies: [],
-      specificcompany: {}
+      specificcompany: '-'
     },
     this.filterCompanies = this.filterCompanies.bind(this)
     this.handleKeyUpCompany = this.handleKeyUpCompany.bind(this)
@@ -153,7 +153,7 @@ class CompanyIndex extends React.Component {
               )}
             </div>
           </div>
-          <div className="column is-one-third">
+          <div className="column is-one-third"> {(this.state.specificcompany !== '-') &&
             <div className="tile is-parent">
               <article className="tile is-child notification is-danger is-bold">
                 <div className="content">
@@ -176,7 +176,7 @@ class CompanyIndex extends React.Component {
                   </div>
                 </div>
               </article>
-            </div>
+            </div> }
           </div>
         </div>
       </section>

@@ -1,8 +1,7 @@
 import React from 'react'
-import CompanyModal from '../modals/CompanyDetail'
 
 
-const CompanyCard = ({ id, name, logo, location, industry, womenAchievements, onClick }) => {
+const CompanyCard = ({ id, name, logo, location, industry, onClick }) => {
   return (
     <div className="box company-box card-equal-heigh">
       <div className="media ">

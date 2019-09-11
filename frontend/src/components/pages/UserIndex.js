@@ -55,13 +55,15 @@ class UserIndex extends React.Component {
         role: 'all',
         skills: []
       },
-      applicants: []
+      applicants: [],
+      specificapplicant: '-'
     },
     this.filterApplicants = this.filterApplicants.bind(this)
     this.handleKeyUpUser = this.handleKeyUpUser.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeRole = this.handleChangeRole.bind(this)
     this.handleChangeTechnologies = this.handleChangeTechnologies.bind(this)
+    this.showApplicant = this.showApplicant.bind(this)
   }
 
   componentDidMount() {
@@ -103,6 +105,13 @@ class UserIndex extends React.Component {
 
     const sortedApplicants = _.orderBy(filterApplicants, [field], [order])
     return sortedApplicants
+  }
+
+  showApplicant(e){
+    console.log(e.target.value)
+    axios.get(`/api/applicants/${e.target.value}/`)
+      .then(res => this.setState({ specificapplicant: res.data}))
+      .then(console.log(this.state.specificapplicant))
   }
 
   render() {
@@ -171,31 +180,64 @@ class UserIndex extends React.Component {
             </div>
           </div>
         </section>
-        <div className="columns is-multiline">
-          {this.filterApplicants().map(applicant =>
-            <div
-              key={applicant.id}
-              className="column is-one-third"
-            >
-              <span className="UserCard">
-                <Link to={`/applicants/${applicant.id}`}>
-                  <UserCard
-                    id={applicant.id}
-                    firstname={applicant.firstname}
-                    lastname={applicant.lastname}
-                    image={applicant.image}
-                    headline={applicant.headline}
-                    roles={applicant.roles}
-                    linkedin={applicant.linkedin}
-                    portfolio={applicant.portfolio}
-                    github={applicant.github}
-                    cv={applicant.cv}
-                    skills={applicant.skills}
-                  />
-                </Link>
-              </span>
+        <br/>
+        <div className="columns">
+          <div className="column is-two-thirds">
+            <div className="columns is-multiline">
+              {this.filterApplicants().map(applicant =>
+                <div
+                  key={applicant.id}
+                  className="column is-half"
+                >
+                  <span className="UserCard">
+                    <div>
+                      <UserCard
+                        id={applicant.id}
+                        firstname={applicant.firstname}
+                        lastname={applicant.lastname}
+                        image={applicant.image}
+                        headline={applicant.headline}
+                        roles={applicant.roles}
+                        linkedin={applicant.linkedin}
+                        portfolio={applicant.portfolio}
+                        github={applicant.github}
+                        cv={applicant.cv}
+                        skills={applicant.skills}
+                        onClick={this.showApplicant}
+                      />
+                    </div>
+                  </span>
+                </div>
+              )}
             </div>
-          )}
+          </div>
+          <div className="column is-one-third"> {(this.state.specificapplicant !== '-') &&
+            <div className="tile is-parent">
+              <article className="tile is-child notification is-danger is-bold">
+                <div className="content">
+                  <br/>
+                  <div className="level">
+                    <figure className="level-right image is-96x96">
+                      <img src={this.state.specificapplicant.image} alt={this.state.specificapplicant.user.username} />
+                    </figure>
+                  </div>
+                  <br/>
+                  <p className="title has-text-dark">{this.state.specificapplicant.firstname} {this.state.specificapplicant.lastname}</p>
+                  <p className="subtitle is-6">{this.state.specificapplicant.headline}</p>
+                  <div className="content">
+                    <h3 className="subtitle"><span className="has-text-weight-semibold">Desired roles:</span><div className="tags">{this.state.specificapplicant.roles.map(role => <div className="tag" key={role}>{role}</div>)}</div></h3>
+                    <h3 className="subtitle"><span className="has-text-weight-semibold">Technologies:</span><div className="tags">{this.state.specificapplicant.skills.map(skill => <div className="tag" key={skill}>{skill}</div>)}</div></h3>
+                    <div className="buttons has-text-centered">
+                      <a  href={this.state.specificapplicant.github} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Y0Mskai.png" alt="GithubLogo"/>GitHub</a>
+                      <a  href={this.state.specificapplicant.linkedin} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/>LinkedIn</a>
+                      <a  href={this.state.specificapplicant.portfolio} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Portfolio</a>
+                      <a  href={this.state.specificapplicant.cv} className="button is-small is-danger is-inverted" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Rn77cJl.png" alt="CV"/>Download CV</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div> }
+          </div>
         </div>
       </section>
     )

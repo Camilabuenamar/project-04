@@ -1,5 +1,4 @@
 import React from 'react'
-import OfferModal from '../modals/OfferDetail'
 
 
 const OfferCard = ({ id, name, location, jobtitle, role, wage, technologies, onClick }) => {
