@@ -96,58 +96,73 @@ class OfferIndex extends React.Component {
     return (
       <section className="section">
         <Navbar/>
-        <div className="container has-navbar-fixed-top">
-          <div className="filters">
-            <form>
-              <div className="field is-grouped is-grouped-centered">
-                <div className="control">
-                  <input
-                    placeholder="Search Jobtitle"
-                    className="input"
-                    onKeyUp={this.handleKeyUpJobtitle}/>
-                </div>
-                <div className="control">
-                  <input
-                    placeholder="Search Company"
-                    className="input"
-                    onKeyUp={this.handleKeyUpCompany}/>
-                </div>
-                <label className="label">Order by: </label>
-                <div className="select">
-                  <select onChange={this.handleChangeOrder}>
-                    <option value="jobtitle|asc"> A - Z</option>
-                    <option value="jobtitle|desc"> Z - A</option>
-                    <option value="wage|desc"> Higher Wage first</option>
-                    <option value="wage|asc"> Lower Wage first</option>
-                  </select>
-                </div>
+        <section className="hero is-small has-background">
+          <img alt="Home image" className="hero-background is-transparent" src="https://imgur.com/nHBe5HQ.jpg" />
+          <div className="hero-body">
+            <div className="container has-navbar-fixed-top">
+              <div className="header">
+                <h1 className="title is-1 has-text-danger has-text-centered">
+                  OFFERS
+                </h1>
+                <h2 className="subtitle is-4 has-text-centered">
+                  See offers from companies commited in women in tech growth.
+                </h2>
               </div>
-              <div className="field">
-                <label className="label">Technologies:</label>
-                <div className="control is-expanded">
-                  <Select
-                    isMulti
-                    isSearchable
-                    name="technologies"
-                    closeMenuOnSelect={false}
-                    components={animatedComponents}
-                    onChange={this.handleChangeTechnologies}
-                    options={technologies}
-                  />
-                </div>
-                <div>
-                  <label className="label">Find a match with your skills</label>
-                  <a className="button is-danger is-outlined">Yes, please</a>
-                </div>
+              <br/>
+              <div className="filters">
+                <form>
+                  <div className="field is-grouped is-grouped-centered">
+                    <div className="control">
+                      <input
+                        placeholder="Search Jobtitle"
+                        className="input"
+                        onKeyUp={this.handleKeyUpJobtitle}/>
+                    </div>
+                    <div className="control">
+                      <input
+                        placeholder="Search Company"
+                        className="input"
+                        onKeyUp={this.handleKeyUpCompany}/>
+                    </div>
+                    <label className="label">Order by: </label>
+                    <div className="select">
+                      <select onChange={this.handleChangeOrder}>
+                        <option value="jobtitle|asc"> A - Z</option>
+                        <option value="jobtitle|desc"> Z - A</option>
+                        <option value="wage|desc"> Higher Wage first</option>
+                        <option value="wage|asc"> Lower Wage first</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="field is-grouped is-grouped-centered">
+                    <label className="label">Technologies:</label>
+                    <div className="control">
+                      <Select
+                        isMulti
+                        isSearchable
+                        name="technologies"
+                        closeMenuOnSelect={false}
+                        components={animatedComponents}
+                        onChange={this.handleChangeTechnologies}
+                        options={technologies}
+                      />
+                    </div>
+                    <label className="label">Find a match with your skills: </label>
+                    <div className="control">
+                      <button className=" control button is-danger is-outlined">Yes, please</button>
+                    </div>
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
-        </div>
+        </section>
+        <br/>
         <div className="columns is-multiline">
           {this.filterOffers().map(offer =>
             <div
               key={offer.id}
-              className="column is-half"
+              className="column is-one-third"
             >
               <span className="OfferCard">
                 <Link to={`/offers/${offer.id}`}>

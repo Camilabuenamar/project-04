@@ -111,71 +111,88 @@ class UserIndex extends React.Component {
     return (
       <section className="section">
         <Navbar/>
-        <div className="container has-navbar-fixed-top">
-          <div className="filters">
-            <form>
-              <div className="field is-grouped is-grouped-centered">
-                <div className="control">
-                  <input
-                    placeholder="Search User"
-                    className="input"
-                    onKeyUp={this.handleKeyUpUser}/>
-                </div>
-                <label className="label">Order by: </label>
-                <div className="select">
-                  <select onChange={this.handleChangeOrder}>
-                    <option value="firstname|asc"> Firstname A - Z</option>
-                    <option value="firstname|desc"> Firstname Z - A</option>
-                    <option value="lastname|asc"> Lastname A - Z</option>
-                    <option value="lastname|desc"> Lastname Z - A</option>
-                  </select>
-                </div>
-                <label className="label">Role: </label>
-                <div className="control">
-                  <Select
-                    isSearchable
-                    name="roles"
-                    closeMenuOnSelect={false}
-                    components={animatedComponents}
-                    onChange={this.handleChange}
-                    options={roles}
-                  />
-                </div>
-                <label className="label">Technologies: </label>
-                <div className="control">
-                  <Select
-                    isSearchable
-                    name="skills"
-                    closeMenuOnSelect={false}
-                    components={animatedComponents}
-                    onChange={this.handleChangeTechnologies}
-                    options={technologies}
-                  />
-                </div>
+        <section className="hero is-small has-background">
+          <img alt="Home image" className="hero-background is-transparent" src="https://imgur.com/wKaaJ9L.jpg" />
+          <div className="hero-body">
+            <div className="container has-navbar-fixed-top">
+              <div className="header">
+                <h1 className="title is-1 has-text-danger has-text-centered">
+                  APPLICANTS
+                </h1>
+                <h2 className="subtitle is-4 has-text-centered">
+                  Here you can find the best talent of women in tech.
+                </h2>
               </div>
-            </form>
+              <br/>
+              <div className="filters">
+                <form>
+                  <div className="field is-grouped is-grouped-centered">
+                    <div className="control">
+                      <input
+                        placeholder="Search User"
+                        className="input"
+                        onKeyUp={this.handleKeyUpUser}/>
+                    </div>
+                    <label className="label">Order by: </label>
+                    <div className="select">
+                      <select onChange={this.handleChangeOrder}>
+                        <option value="firstname|asc"> Firstname A - Z</option>
+                        <option value="firstname|desc"> Firstname Z - A</option>
+                        <option value="lastname|asc"> Lastname A - Z</option>
+                        <option value="lastname|desc"> Lastname Z - A</option>
+                      </select>
+                    </div>
+                    <label className="label">Role: </label>
+                    <div className="control">
+                      <Select
+                        isSearchable
+                        name="roles"
+                        closeMenuOnSelect={false}
+                        components={animatedComponents}
+                        onChange={this.handleChange}
+                        options={roles}
+                      />
+                    </div>
+                    <label className="label">Technologies: </label>
+                    <div className="control">
+                      <Select
+                        isMulti
+                        isSearchable
+                        name="skills"
+                        closeMenuOnSelect={false}
+                        components={animatedComponents}
+                        onChange={this.handleChangeTechnologies}
+                        options={technologies}
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
         <div className="columns is-multiline">
           {this.filterApplicants().map(applicant =>
             <div
               key={applicant.id}
-              className="column is-half"
+              className="column is-one-third"
             >
               <span className="UserCard">
-                <UserCard
-                  id={applicant.id}
-                  firstname={applicant.firstname}
-                  lastname={applicant.lastname}
-                  image={applicant.image}
-                  headline={applicant.headline}
-                  roles={applicant.roles}
-                  linkedin={applicant.linkedin}
-                  portfolio={applicant.portfolio}
-                  github={applicant.github}
-                  cv={applicant.cv}
-                  skills={applicant.skills}
-                />
+                <Link to={`/applicants/${applicant.id}`}>
+                  <UserCard
+                    id={applicant.id}
+                    firstname={applicant.firstname}
+                    lastname={applicant.lastname}
+                    image={applicant.image}
+                    headline={applicant.headline}
+                    roles={applicant.roles}
+                    linkedin={applicant.linkedin}
+                    portfolio={applicant.portfolio}
+                    github={applicant.github}
+                    cv={applicant.cv}
+                    skills={applicant.skills}
+                  />
+                </Link>
               </span>
             </div>
           )}

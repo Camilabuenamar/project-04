@@ -38,6 +38,15 @@
   }
 }
 
+.company-box {
+  height: 200px;
+}
+
+.card-equal-height {
+   display: flex;
+   flex-direction: column;
+   height: 100%
+}
 
 .logo {
   margin-left: 300px;

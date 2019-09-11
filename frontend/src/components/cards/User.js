@@ -5,7 +5,7 @@ import UserModal from '../modals/UserDetail'
 const UserCard = ({ firstname, lastname, headline, roles, skills }) => {
   roles = roles[1] ? roles : [roles]
   return (
-    <div className="box">
+    <div className="box card-equal-heigh">
       <div className="card-header">
         <div className="card-header-title">{firstname} {lastname}</div>
       </div>
