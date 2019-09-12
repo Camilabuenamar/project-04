@@ -418,7 +418,7 @@
   "pk": 24,
   "fields": {
     "password": "pbkdf2_sha256$150000$c7Ek9o1jUvfu$O7a+eW4xIIsYEhr1qaot60InOhGOE/C3KgarItn4iGY=",
-    "last_login": "2019-09-10T14:50:45.322Z",
+    "last_login": "2019-09-12T08:27:58.366Z",
     "is_superuser": true,
     "username": "camila",
     "first_name": "",
@@ -433,72 +433,18 @@
 },
 {
   "model": "auth.user",
-  "pk": 25,
+  "pk": 29,
   "fields": {
-    "password": "pbkdf2_sha256$150000$I0bIEpC2ORn4$RkfdWTVo2DfJz2DLFuBRIn3xt8PoDhdNMPZ4Fmwxu2U=",
+    "password": "pbkdf2_sha256$150000$41wlfmX5DJU4$zujSPY7zK2WAwHebcvciArAPlpKNTT9YGjhv7dMXpKs=",
     "last_login": null,
     "is_superuser": false,
-    "username": "camila1",
+    "username": "company8",
     "first_name": "",
     "last_name": "",
-    "email": "camila1@gmail.com",
+    "email": "company8@gmail.com",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2019-09-10T17:45:52.690Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 26,
-  "fields": {
-    "password": "pbkdf2_sha256$150000$9o10jmrNv06h$cE7BUP1ZcAhnX75x3FdxbjcfwhBfqwv4XZqT//C2YDs=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "camila10",
-    "first_name": "",
-    "last_name": "",
-    "email": "camila10@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2019-09-11T13:35:46.955Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 27,
-  "fields": {
-    "password": "pbkdf2_sha256$150000$Q9a2FVJfFUnr$E5zL/XTcwbm6K10D5XQ0jCQRON/HCmtZe2GWBkumemg=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "camila11",
-    "first_name": "",
-    "last_name": "",
-    "email": "camila11@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2019-09-11T13:36:33.750Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 28,
-  "fields": {
-    "password": "pbkdf2_sha256$150000$cK3a9Wzjj9ob$lWC9om6UN39eeiuthCr9GdMDsEKvJLdJLJ+Sm5EAfxc=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "camila12",
-    "first_name": "",
-    "last_name": "",
-    "email": "camila12@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2019-09-11T14:06:24.819Z",
+    "date_joined": "2019-09-12T09:00:00.225Z",
     "groups": [],
     "user_permissions": []
   }
