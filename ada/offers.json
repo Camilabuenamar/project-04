@@ -1,0 +1,228 @@
+[
+{
+  "model": "ada.offer",
+  "pk": 1,
+  "fields": {
+    "company": 1,
+    "jobtitle": "Software Engineer: Smart Contracts",
+    "role": "Full Stack",
+    "wage": 120,
+    "experience_in_years": 1,
+    "description_of_role": "Take customer specifications to identify and develop features to build on top of the core product. Maintain and develop core product features that analyzes and writes smart contract code. Analyze customer codebases using Synthetic Minds' proprietary tools. Define specifications and roadmap for unmet customer needs. Work with team to develop features needed.",
+    "technologies": "[\"JavaScript\", \"Python\", \"React Native\", \"C++\"]",
+    "qualifications": "Minimum:  2+ years experience in a software engineering role. Interest in smart contracts, and program synthesis. Desire to learn about smart contract languages and compilers, automated theorem provers, code analysis and generation. Preferred:  Bachelors or masters in computer science. Interest in smart contract languages, e.g., Solidity. Experience with large projects in a performance language (e.g., C++). Experience with tools for code analysis: fuzzers, static analysis, etc.",
+    "benefits": "we have 32 days per year of free traveling",
+    "applications_received": [
+      1
+    ]
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 2,
+  "fields": {
+    "company": 1,
+    "jobtitle": "Software Engineer: Theorem Proving",
+    "role": "Backend",
+    "wage": 120,
+    "experience_in_years": 1,
+    "description_of_role": "Work on the core theorem prover encoding utilized by Synthetic Minds for program verification and analysis. Interface with some of the world's best external theorem proving efforts to collaboratively solve real world problems. Find and build the most scalable SMT encodings for our application.",
+    "technologies": "[\"Python\", \"C++\"]",
+    "qualifications": "Minimum:  Bachelors or masters in Computer Science Experience with automated theorem provers: Z3, CVC4, etc Preferred:  Previous work experience applying Z3 to commercial applications Masters or PhD in topic utilizing theorem provers Experience solving program analysis problems with automated provers",
+    "benefits": "We have lunch everyday for all our employees",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 3,
+  "fields": {
+    "company": 2,
+    "jobtitle": "Front End Scraper Engineer",
+    "role": "Backend",
+    "wage": 60,
+    "experience_in_years": 0,
+    "description_of_role": "Our core business is to fund lawsuits. Our technology stack enables us to source, vet, and diligence lawsuit funding applications at scale.  The platform consists of a central Django application / PostgreSQL database and several microservices. Our goal is to improve the current platform by introducing new technologies and methodologies to our current processes.  scale our underwriting process so that our lawyers can underwrite more applications without reducing the quality of their underwriting process manage competing processes from the various teams - finance, legal, sales create new technologies that enable quantitative analysis in place of historically qualitative underwriting analyses improve engineering processes so that routine work can be minimized through internal tooling build automated systems to replace routine business processes Our team is incredibly lean and each individual has significant autonomy over their own projects and domains. An ability to work independently, bu",
+    "technologies": "[\"CSS\", \"HTML\", \"JavaScript\", \"Python\", \"React\", \"PostgreSQL\"]",
+    "qualifications": "The ideal candidate will demonstrate in-depth knowledge of Web fundamentals including HTTP, HTML5, CSS, DOM, JS. They will be a proponent of Web standards, and follow proposed and emerging standards closely. They will be familiar with common site structures and navigation systems including client-side routing and patterns involving modern front-end frameworks including React and Angular.  Experience working with data stores such as MySQL/PostgreSQL, or similar Experience working with Cloud Computing technologies (e.g. AWS) Backend engineering experience in Python/Django Experienced with software engineering best practices - design patterns, code reviews, unit and integration testing etc. Ability to communicate technical specifications both verbal and written",
+    "benefits": "We have game room and open bar on fridays",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 4,
+  "fields": {
+    "company": 2,
+    "jobtitle": "Software Developer",
+    "role": "Full Stack",
+    "wage": 90,
+    "experience_in_years": 3,
+    "description_of_role": "Our core business is to fund lawsuits. Our technology stack enables us to source, vet, and diligence lawsuit funding applications at scale.  The platform consists of a central Django application / PostgreSQL database and several microservices. Our goal is to improve the current platform by introducing new technologies and methodologies to our current processes.  scale our underwriting process so that our lawyers can underwrite more applications without reducing the quality of their underwriting process manage competing processes from the various teams - finance, legal, sales create new technologies that enable quantitative analysis in place of historically qualitative underwriting analyses improve engineering processes so that routine work can be minimized through internal tooling build automated systems to replace routine business processes Our team is incredibly lean and each individual has significant autonomy over their own projects and domains. An ability to work independently, bu",
+    "technologies": "[\"Python\", \"PostgreSQL\"]",
+    "qualifications": "Applicants are not expected to show advanced understanding of all of the below, but must show willingness, ability, and interest in keeping up with cutting edge technologies and frameworks.  4+ years of experience in software development Degree in Computer Science or equivalent field Ability to implement best practices across a broad spectrum of different backend technologies Comfort with highly scalable infrastructure, automated deployment and and containerized applications Experience working with modern data stores such as NoSQL/Postgres, S3, Cassandra or similar Experience working with Cloud Computing technologies (e.g. AWS, Azure, GCP) Backend engineering experience in Python/Django Experienced with software engineering best practices \u2013 design patterns, code reviews, unit and integration testing, blue-green deployment etc. Ability to communicate technical specifications both verbal and written",
+    "benefits": "We have game room and open bar on fridays",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 5,
+  "fields": {
+    "company": 3,
+    "jobtitle": "Computer Vision Engineer",
+    "role": "Backend",
+    "wage": 150,
+    "experience_in_years": 0,
+    "description_of_role": "At SmartSpot, you'll be responsible for improving our computer vision pipeline for processing 3D data of human exercise. We're looking for a flexible, curious applicant with a background in computer vision (real-time computer vision preferred).",
+    "technologies": "[\"C++\", \"Python\"]",
+    "qualifications": "Basic Qualifications  B.A./B.S. in Computer Science or related technical field or equivalent practical experience 3+ years programming experience in C++ Strong mathematical background (3D geometry, linear algebra, numerical methods, algorithms) Preferred Qualifications  Experience with TensorFlow 2+ years industry experience in Computer Vision 2+ years experience with Python Familiarity with the state of the art in Computer Vision research Immediate availability",
+    "benefits": "You can do remote work whenever you want and you can access all the wework offices network worldwide.",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 6,
+  "fields": {
+    "company": 4,
+    "jobtitle": "Lead Developer",
+    "role": "Full Stack",
+    "wage": 120,
+    "experience_in_years": 0,
+    "description_of_role": "We are looking for a lead developer who has a strong interest in blockchain technology, open-source, decentralization, security, and testing. You can work autonomously, have a strong integrity and are up for the challenge to build a more efficient future.  You will join the Request Network Foundation team which is part of the YCombinator network. We share strong values and have been working together for several years.  Responsibilities  Develop Request Network apps, libraries, and websites  Help educating our community about how to build on Request  Contribute to a decentralized payment protocol built on the blockchain  Manage and recruit the development team",
+    "technologies": "[\"Amazon Web Services (AWS)\", \"Angular\", \"CSS\", \"HTML\", \"JavaScript\", \"MongoDB\", \"React\", \"Node.js\"]",
+    "qualifications": "Qualifications  Passionate about creating and releasing projects, as well as learning new languages  Passionate about startups, entrepreneurship and management  Autonomous, available and responsible  Be able to identify relations between parts of complex projects  Be able to demonstrate a deep understanding of the blockchain architecture  Hold a Master's in computer science or an equivalent field (STEM)  Proven analytical and proactive problem solving skills  Experience with modern web development (responsive design with HTML/CSS, ES6, React/ Angular/Node.js, etc.). Knowledge of web3.js library is a plus",
+    "benefits": "Part-time remote work possible after a while.",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 7,
+  "fields": {
+    "company": 4,
+    "jobtitle": "Full Stack Developer at Request Network",
+    "role": "Full Stack",
+    "wage": 120,
+    "experience_in_years": 0,
+    "description_of_role": "We are looking for a full stack developer who has a strong interest in blockchain technology, open-source, decentralization, security, and testing. You can work autonomously, have a strong integrity and are up for the challenge to build a more efficient future.  You will join the Request Network Foundation team which is part of the YCombinator network. We share strong values and have been working together for several years.  Responsibilities  Develop Request Network apps, libraries, and websites  Help educating our community about how to build on Request  Contribute to a decentralized payment protocol built on the blockchain  Cooperate with the development team and experts",
+    "technologies": "[\"Angular\", \"CSS\", \"HTML\", \"JavaScript\", \"MongoDB\", \"Node.js\"]",
+    "qualifications": "Qualifications  Passionate about creating and releasing projects, as well as learning new languages  Passionate about startups and entrepreneurship  Autonomous, available and responsible  Be able to identify relations between parts of complex projects  Be able to demonstrate a deep understanding of the blockchain architecture  Hold a Master's in computer science or an equivalent field (STEM)  Proven analytical and proactive problem solving skills  Experience with modern web development (responsive design with HTML/CSS, ES6, React/ Angular/Node.js, etc.). Knowledge of web3.js library is a plus",
+    "benefits": "Part-time remote work possible after a while.",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 8,
+  "fields": {
+    "company": 5,
+    "jobtitle": "Engineering Manager - Clojure",
+    "role": "Full Stack",
+    "wage": 200,
+    "experience_in_years": 6,
+    "description_of_role": "Overview In order to grow efficiently we are looking for engineering leadership to help with hiring, coordination, and to act as a force multiplier. This position reports to the CTO and is based in San Mateo, CA.  Responsibilities: There is significant freedom with how to accomplish the below responsibilities although it is expected that you will discuss and iterate your plans based on feedback.  Hire appropriately and effectively. This likely entails working with leadership to determine hiring needs, appropriate job descriptions, leveling, responsibilities, and evaluation criteria for all technical hiring. Help the product and engineering planning and development process run smoothly. Assist with process and structure to plan, estimate, and implement product, design and engineering work based on feedback. Prioritize and implement infrastructure to assist with velocity as necessary. Help engineers develop and grow. Provide guidance with technical decision making, help with code reviews",
+    "technologies": "[\"React Native\", \"React\"]",
+    "qualifications": "Qualifications: Solid foundation in computer science fundamentals Previous experience as a technical lead on a project Previous experience managing and running a product engineering team Previous experience hiring for a diverse variety of technical disciplines Track record for becoming a domain expert in both technical and business Track record of a pragmatic approach to software development Bonus Points for: Open source experience React Native experience Previous edtech, startup, or online marketplace experience",
+    "benefits": "Perks: Medical/dental benefits Generous PTO Paid holidays Stock options 401k match Maternity/Paternity leave benefits A stocked kitchen and unlimited caffeine Mission-driven work Fun, collaborative, balanced culture Swing Education is an equal opportunity employer and strongly encourages applications from people of color, persons with disabilities, women, and LGBT applicants.",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 9,
+  "fields": {
+    "company": 5,
+    "jobtitle": "Front-end Engineer",
+    "role": "Frontend",
+    "wage": 100,
+    "experience_in_years": 0,
+    "description_of_role": "Overview We are looking for a front-end engineer to help us focus on the usability, consistency, and visual aesthetics of our product. You will both help build new features and improve existing features with an emphasis on minimizing user confusion. You will help build front-end infrastructure, and will help build reusable components for other engineers to utilize. This is a highly technical role that reports directly to the Chief Technical Officer but also will work closely with our product and design teams.  Please note that we use Clojure as our primary language and Datomic as our primary datastore. No previous Clojure/Datomic experience is required but an interest and willingness to learn is important. The vast majority of your day-to-day work will be in Clojure/Clojurescript.  Responsibilities and Duties: Product features: Design and implement features in a performant, structured manner on our web (and eventually mobile) platform. Work collaboratively with our product and design t",
+    "technologies": "[\"HTML\", \"CSS\", \"JavaScript\", \"MySQL\"]",
+    "qualifications": "Qualifications: 2+ years\u2019 experience doing front-end engineering work Previous experience working with designers or UI/UX background Strong familiarity with HTTP, HTML, CSS, JavaScript, modern browser-based APIs BA/BS in Computer Science, or other associated technical field. Ability to initiate and drive projects to completion with minimal guidance, communicate and prioritize well. Experience in SQL, Datalog or related data query languages Strong technical computer science fundamentals Bonus Points Previous Clojure, Clojurescript, Datomic, or Lisp-based language experience Previous experience building/deploying UI component libraries Previous mobile development experience via React Native Previous startup or consumer Internet company experience",
+    "benefits": "Perks: Medical/dental benefits Generous PTO Paid holidays Stock options 401k match Maternity/Paternity leave benefits A stocked kitchen and unlimited caffeine Mission-driven work Fun, collaborative, balanced culture",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 10,
+  "fields": {
+    "company": 5,
+    "jobtitle": "Full Stack Engineer - Product Focus",
+    "role": "Full Stack",
+    "wage": 120,
+    "experience_in_years": 0,
+    "description_of_role": "Overview: We are looking to grow our engineering team with engineers that have broad interests and want a chance to participate in many aspects of the business and want to help contribute to the broader goal of helping schools operate more efficiently.  This position reports to the CTO and is based in San Mateo, CA. Swing is a revenue generating, Series B, Y Combinator company (through ImagineK12).  Responsibilities: Work closely with our product team to develop features in a pragmatic way. This may involve suggesting tweaks, offering potential trade-offs, and breaking down a feature into smaller chunks to be developed and deployed in stages. We expect our engineers to participate in the product development process starting with a rather broad goal/directive with minimal specification and implement both a functional user interface as well as the backend infrastructure required to support it. Support both customers and other teams tooling and smaller computer programs to aid in automati",
+    "technologies": "[\"React Native\", \"React\"]",
+    "qualifications": "Qualifications: Solid foundation in computer science fundamentals. While we do not strictly require a degree in Computer Science and day-to-day work does not require algorithmic expertise, there are certain classes of problems that tend to crop up that you should be comfortable with and have experience recognizing. Some examples: Recognize when you have an n-squared algorithm or worse. Recognize when you are searching for a pattern that cannot be matched via regular expression or have a problem that is equivalent to the Halting problem. Track record for becoming a domain expert over time in both technical and business areas Track record of a pragmatic approach to software development Bonus Points for: Open source experience React Native experience Previous edtech, startup, or online marketplace experience New user onboarding and first touch tailoring experience",
+    "benefits": "Perks: Medical/dental benefits Generous PTO Paid holidays Stock options 401k match Maternity/Paternity leave benefits A stocked kitchen and unlimited caffeine Mission-driven work Fun, collaborative, balanced culture Swing Education is an equal opportunity employer and strongly encourages applications from people of color, persons with disabilities, women, and LGBT applicants.",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 11,
+  "fields": {
+    "company": 8,
+    "jobtitle": "Mobile Engineer/React Native",
+    "role": "iOS",
+    "wage": 300,
+    "experience_in_years": 6,
+    "description_of_role": "EquipmentShare is Growing. EquipmentShare is searching for an amazing React Native Mobile Engineer to join our Engineering team.  Are you passionate about solving real problems and making an impact? Are you galvanized by opportunities to deliver real customer value early and often? If you thrive in environments of ownership and autonomy and are an incredible teammate and collaborator, then let\u2019s talk.  EquipmentShare delivers technology-driven solutions for construction industry professionals, and we provide a better equipment rental experience, fleet tracking software and hardware security solutions to help contractors work smarter.  We respect our employees\u2019 lives outside of work and offer awesome perks (think stocked kitchens and flexible schedules), full benefits and competitive salaries to ensure our employees feel taken care of.",
+    "technologies": "[\"React Native\"]",
+    "qualifications": "Visa Required and 6 years or more of experience in React Native",
+    "benefits": "Our mission to change an entire industry is a grand mission, so we only hire people who are up to take on this massive challenge with us. We like to work with people who are constantly learning and bringing new ideas to the table, as well as keeping themselves up to date with trends and best practices.",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 12,
+  "fields": {
+    "company": 9,
+    "jobtitle": "Senior Software Engineer, Infrastructure",
+    "role": "Backend",
+    "wage": 200,
+    "experience_in_years": 3,
+    "description_of_role": "We're looking for an experienced Software Developer to join our infrastructure team. We're a small team that moves fast. We code mostly in Python and our infrastructure runs on Amazon Web Services. Come join us!  Responsibilities You will create tools for software engineers, data scientists, and data analysts to easily run their production (and staging) services. You will be part of a team of 7 with a large amount of ownership and responsibility across our development org. You will own the security and availability of critical infrastructure components.",
+    "technologies": "[\"Amazon Web Services (AWS)\", \"Python\", \"Ruby on Rails\", \"JavaScript\", \"PostgreSQL\"]",
+    "qualifications": "Requirements 3+ years of industry experience Bachelor\u2019s degree in computer science, computer engineering, electrical engineering or equivalent work experience Strong coding ability Strong understanding of Linux and how to manage servers Experience with Amazon Web Services (AWS), including EC2 Experience with configuration management, such as SaltStack or Ansible Experience with micro-services (Docker) The ability to ship pragmatic solutions with a high sense of urgency Self-motivation and a strong sense of ownership Desirable The ability to analyze data with SQL Experience with Python, Ruby, or JavaScript Experience with web frameworks, like Ruby on Rails Experience with Postgres, Redis, and Elasticsearch Open-source projects or contributions",
+    "benefits": "70% of discount in our platforms",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 13,
+  "fields": {
+    "company": 9,
+    "jobtitle": "Senior Data Scientist",
+    "role": "Data Science",
+    "wage": 150,
+    "experience_in_years": 1,
+    "description_of_role": "You will be joining our growing data science team and you will have a chance to make a large impact at Instacart. You will be embedded within our data driven product team to identify key metrics, conduct deep and rigorous analysis, and deliver insights to the team to drive product improvement. You will be a trusted partner in the team tackling the toughest and most impactful analytical problems while making the data accessible to your teammates. More details on what you\u2019ll be doing:  Responsibilities Conduct quantitative research and analysis of Instacart\u2019s data requiring complex data retrieval that results in actionable insights and recommendations Identify key questions, problems, and KPIs to improve the experience of our customers using your sharp business acumen and judgment Help develop effective and scalable data models in our production environment and develop, build, and maintain a user friendly version our production data in our data warehouse Work daily with product managers",
+    "technologies": "[\"MySQL\", \"PostgreSQL\", \"Python\"]",
+    "qualifications": "Requirements Passion for, and a track record of leveraging data for business impact, preferably in a consumer facing digital environment Ability to write complex and performant queries in your dialect of SQL to extract data from our Redshift cluster Experience building tools and automated processes to extract, clean, and distill data in a procedural language of your choice such as Python, Julia or R Understanding of A/B testing and other forms of statistical analysis using statistical packages similar to R, SAS, or Pandas Experience with analytical visualization tools such as Tableau, Looker, D3.js or similar tools Excellent communication skills with the ability to distill complex problems into meaningful and digestible insights Desirable Data modeling, ETL and data pipeline development experience Advanced degree in statistics or other quantitative field",
+    "benefits": "70% of discount in our platforms",
+    "applications_received": []
+  }
+},
+{
+  "model": "ada.offer",
+  "pk": 14,
+  "fields": {
+    "company": 10,
+    "jobtitle": "Infraestructure Engineer",
+    "role": "Devops",
+    "wage": 400,
+    "experience_in_years": 3,
+    "description_of_role": "Global problems. Global impact. Flexport\u2019s mission is to make global trade easy for everyone. We are re-making a trillion dollar industry that touches every person on Earth, which means solving some of the global community\u2019s most complex challenges. We are looking for makers who love learning, are passionate about collaborating, and desire to build solutions with a global impact.  What you'll do As our first Infrastructure Engineer, you will maintain and grow our infra stack, CI/CD pipelines, and related monitoring/alerting. You will work alongside our product engineers to improve the developer experience and production infrastructure. In addition, you will:  Be our first line of defense against production issues Own and grow our AWS infrastructure against a scaling engineering team and global user base Develop new systems and tools to improve the developer experience and engineering velocity Drive monitoring across the app and ensure reliability of an increasingly complex system",
+    "technologies": "[\"Amazon Web Services (AWS)\", \"Python\", \"Ruby on Rails\", \"Java\"]",
+    "qualifications": "What you'll bring Preferably 3 to 6+ years of relevant work experience in Linux environments Deep experience with the AWS platform The ability and desire to read and understand code across a variety of languages A strong attention to detail and a love for diagnosing complex problems Bonus points if you have: Proficiency with configuration automation using Puppet, Chef, or Ansible Experience with orchestration tools such as Docker, Kubernetes, or Mesos Demonstrable programming skills with Ruby, Python, or Java",
+    "benefits": "8 offices and 3 warehouses in 5 countries, along with a private 747 freighter exclusively serving our clients,",
+    "applications_received": []
+  }
+}
+]

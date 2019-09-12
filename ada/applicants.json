@@ -1,0 +1,104 @@
+[
+{
+  "model": "ada.applicant",
+  "pk": 2,
+  "fields": {
+    "user": 12,
+    "firstname": "Juana Manuela",
+    "lastname": "Osuna",
+    "image": "https://fscomps.fotosearch.com/compc/CSP/CSP453/cara-femenina-avatar-redondo-plano-clipart__k41520170.jpg",
+    "headline": "I studied Computer Science and have 2 years of experience",
+    "roles": "[\"Frontend\", \"Backend\", \"Full Stack\", \"iOS\"]",
+    "linkedin": "https://uk.linkedin.com/in/camilabuenaventuramarquez",
+    "portfolio": "http://www.camilabuenamar.com",
+    "github": "https://github.com/Camilabuenamar",
+    "cv": "https://drive.google.com/file/d/1BLvboZAqpVt_jlVEk5lrEenIrPfGyH_l/view?usp=sharing",
+    "skills": "[\"Python\", \"Java\", \"PHP\", \"JavaScript\", \"HTML\", \"CSS\"]"
+  }
+},
+{
+  "model": "ada.applicant",
+  "pk": 3,
+  "fields": {
+    "user": 13,
+    "firstname": "Sandra",
+    "lastname": "Ramos",
+    "image": "https://fscomps.fotosearch.com/compc/CSP/CSP042/cara-femenina-avatar-redondo-plano-clipart__k41520163.jpg",
+    "headline": "Software Engineer with MBA",
+    "roles": "[\"Machine Learning\", \"Robotics\", \"Android\"]",
+    "linkedin": "https://uk.linkedin.com/in/camilabuenaventuramarquez",
+    "portfolio": "http://www.camilabuenamar.com",
+    "github": "https://github.com/Camilabuenamar",
+    "cv": "https://drive.google.com/file/d/1BLvboZAqpVt_jlVEk5lrEenIrPfGyH_l/view?usp=sharing",
+    "skills": "[\"MySQL\", \"Amazon Web Services (AWS)\", \"C++\", \"PostgreSQL\", \"Bash/Shell\", \"Angular\", \"React Native\", \"MongoDB\", \"Ruby on Rails\", \"PHP\", \"C\"]"
+  }
+},
+{
+  "model": "ada.applicant",
+  "pk": 4,
+  "fields": {
+    "user": 14,
+    "firstname": "Andrea",
+    "lastname": "Cardona",
+    "image": "https://cdn5.vectorstock.com/i/1000x1000/56/39/people-avatar-face-women-icon-vector-13675639.jpg",
+    "headline": "Just Graduated from Software Engineering at Oxford University",
+    "roles": "[\"Android\", \"Devops\", \"Embedded Systems\"]",
+    "linkedin": "https://uk.linkedin.com/in/camilabuenaventuramarquez",
+    "portfolio": "https://camilabuenamar.com",
+    "github": "https://github.com/Camilabuenamar",
+    "cv": "https://drive.google.com/file/d/1BLvboZAqpVt_jlVEk5lrEenIrPfGyH_l/view?usp=sharing",
+    "skills": "[\"Python\", \"Java\", \"PHP\", \"JavaScript\", \"HTML\", \"CSS\"]"
+  }
+},
+{
+  "model": "ada.applicant",
+  "pk": 5,
+  "fields": {
+    "user": 15,
+    "firstname": "Martina",
+    "lastname": "Rodriguez",
+    "image": "https://avatarfiles.alphacoders.com/146/146537.jpg",
+    "headline": "Just came back from Singapur where I was a googler",
+    "roles": "[\"Android\", \"Data Science\", \"Embedded Systems\"]",
+    "linkedin": "https://uk.linkedin.com/in/camilabuenaventuramarquez",
+    "portfolio": "https://camilabuenamar.com",
+    "github": "https://github.com/Camilabuenamar",
+    "cv": "https://drive.google.com/file/d/1BLvboZAqpVt_jlVEk5lrEenIrPfGyH_l/view?usp=sharing",
+    "skills": "[\"Python\", \"Java\", \"JavaScript\", \"HTML\", \"CSS\"]"
+  }
+},
+{
+  "model": "ada.applicant",
+  "pk": 6,
+  "fields": {
+    "user": 16,
+    "firstname": "Lorena",
+    "lastname": "del Mar",
+    "image": "https://i.pinimg.com/474x/c0/32/48/c03248894de66ef6c0732ea821dae718.jpg",
+    "headline": "Just finished my Master in Software Engineering",
+    "roles": "[\"Android\", \"Data Science\", \"Embedded Systems\", \"Devops\", \"iOS\"]",
+    "linkedin": "https://uk.linkedin.com/in/camilabuenaventuramarquez",
+    "portfolio": "http://www.camilabuenamar.com",
+    "github": "https://github.com/Camilabuenamar",
+    "cv": "https://drive.google.com/file/d/1BLvboZAqpVt_jlVEk5lrEenIrPfGyH_l/view?usp=sharing",
+    "skills": "[\"PHP\", \"C++\", \"MySQL\", \"Java\", \"Angular\", \"C\"]"
+  }
+},
+{
+  "model": "ada.applicant",
+  "pk": 7,
+  "fields": {
+    "user": 17,
+    "firstname": "Maria Antonieta",
+    "lastname": "Marquez",
+    "image": "https://ak1.picdn.net/shutterstock/videos/24384521/thumb/1.jpg",
+    "headline": "Previously a banker, recently graduated from GA SEI Bootcamp",
+    "roles": "[\"Frontend\", \"Backend\", \"Full Stack\"]",
+    "linkedin": "https://uk.linkedin.com/in/camilabuenaventuramarquez",
+    "portfolio": "http://www.camilabuenamar.com",
+    "github": "https://github.com/Camilabuenamar",
+    "cv": "https://drive.google.com/file/d/1BLvboZAqpVt_jlVEk5lrEenIrPfGyH_l/view?usp=sharing",
+    "skills": "[\"Python\", \"HTML\", \"CSS\", \"JavaScript\", \"PostgreSQL\", \"Git\", \"React\", \"Node.js\", \"Bash/Shell\", \"MongoDB\"]"
+  }
+}
+]

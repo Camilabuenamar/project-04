@@ -46,5 +46,149 @@
     "employees": 11,
     "women_employees_percentaje": 5
   }
+},
+{
+  "model": "ada.company",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "name": "cuatro",
+    "logo": "https://s04.s3c.es/imag/_v0/580x350/b/e/2/cuatro-logo.jpg",
+    "location": "Amsterdaam",
+    "industry": "Financial Technology and Services",
+    "description": "The Request Network Foundation promotes the adoption of Blockchain by providing a framework which allows everyone to develop their own financial solutions based on this technology. The Foundation creates and sustains an ecosystem of builders, the so called \u201cRequest Network Hub\u201d, that empowers everyone to disrupt the way we do business tomorrow.  Request is a decentralized network that allows anyone to request a payment (a Request Invoice) for which the recipient can pay in a secure way. All of the information is stored in a decentralized authentic ledger. This results in cheaper, easier, and more secure payments, and it allows for a wide range of automation possibilities. To become the backbone of world trade, Request integrates a general ledger (in the accounting sense of the term), which is:  Universal because it is designed to support 100% of global transactions, regardless of currency, legislation or language. Request is built to last. Smart because unlike an existing standard acco",
+    "website": "https://www.cuatro.com/",
+    "women_achievements": "We are a company formed by women",
+    "employees": 15,
+    "women_employees_percentaje": 10
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "name": "Faif",
+    "logo": "https://hardcore-gamer.s3.amazonaws.com/uploads/2014/03/promo960x1320.png",
+    "location": "San Mateo, CA",
+    "industry": "Education",
+    "description": "Swing Education is the education technology space with an immediate focus on tackling the substitute teacher shortage problem.  Our online platform makes it easy for great schools and quality subs to find each other. We help schools access more subs and offload tedious work associated with managing a pool of substitute teachers (recruiting, screening, payroll, etc.). Our network provides subs with a wider range of work opportunities to gain experience and build their professional network.  After about 4 years in operation we are working with over 1500 schools and have filled over 150k teacher absence days. We're a post-series B company with about 50 employees currently and our lead investors include GV (aka Google Ventures), Owl Ventures, and Social Capital. We also have a strong commitment to diversity and our employees are 60% people of color (30% underrepresented minorities) and over 50% female. Our board of directors is also 75% female and 75% people of color.",
+    "website": "https://www.hardcoregamer.com/2014/03/01/have-some-faif-in-mobile-gaming-new-puzzle-rpg-ready-for-launch/76468/",
+    "women_achievements": "We are certified in San Diego for our maternity policies",
+    "employees": 52,
+    "women_employees_percentaje": 20
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 8,
+  "fields": {
+    "user": 6,
+    "name": "6 Inc.",
+    "logo": "https://st2.depositphotos.com/3867453/12290/v/950/depositphotos_122907270-stock-illustration-number-6-logo-icon-design.jpg",
+    "location": "Columbia, MO",
+    "industry": "Real Estate and Construction",
+    "description": "EquipmentShare delivers technology-driven solutions for construction industry professionals. We are the best way to rent, track, and own construction equipment.",
+    "website": "https://sp.depositphotos.com/122907270/stock-illustration-number-6-logo-icon-design.html",
+    "women_achievements": "",
+    "employees": 715,
+    "women_employees_percentaje": 150
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 9,
+  "fields": {
+    "user": 7,
+    "name": "Seven Solutions",
+    "logo": "https://shedsenn.files.wordpress.com/2011/09/lucky_number_seven_by_snwbrder87.jpg",
+    "location": "San Francisco, CA",
+    "industry": "Consumer Goods and Services",
+    "description": "Instacart is building the best way for people anywhere in the world to shop for groceries. Since Instacart started in 2012, we\u2019ve launched same-day delivery in over 200 US markets. We are laser focused on delivering groceries from your favorite stores right to your door. We now cover over 60% of US households and aim to have 80% coverage by the end 2018\u2014that's 90 million households!",
+    "website": "https://shedsenn.com/2011/09/07/numero-siete/",
+    "women_achievements": "We are ranked as the first place to work for women in tech in the startup Category",
+    "employees": 520,
+    "women_employees_percentaje": 55
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 10,
+  "fields": {
+    "user": 29,
+    "name": "Huit",
+    "logo": "https://pbs.twimg.com/profile_images/1135562432271867904/5JuKpZp2_400x400.png",
+    "location": "San Francisco, Amsterdam, Hong Kong and Hamburg.",
+    "industry": "B2B Software and Services",
+    "description": "Flexport's mission is to make global trade easier for everybody. We are connecting humanity in a seamless web of global trade with our unique blend of software, human expertise, and physical infrastructure.  Our platform for global freight and logistics services enables more than 15,000 companies in 97 countries to exchange products worth more than $4B in 2017. And we are aiming to 2.5x the business again in 2018 while rolling out new services including inventory financing and cargo insurance.  Our platform connects all the roles in the supply chain to improve the user experience and drive down transaction costs of international logistics, while helping companies make more data-driven decisions about where, when and what products to ship.  We are hiring in all of our global offices, including San Francisco, New York, Amsterdam, Shenzhen, Hong Kong, Chicago, Atlanta, Hamburg, and Los Angeles.  8 offices and 3 warehouses in 5 countries, along with a private 747 freighter exclusively serv",
+    "website": "https://www.pinterest.es/AgenciaHuit/",
+    "women_achievements": "EDGE Certification (2017), NES (2018) & Official Sponsor of Latinas in Computing.",
+    "employees": 501,
+    "women_employees_percentaje": 45
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 11,
+  "fields": {
+    "user": 8,
+    "name": "Ben Neun",
+    "logo": "https://assets.b9.com.br/wp-content/uploads/2017/07/b9-logo.png",
+    "location": "San Francisco, CA",
+    "industry": "B2B Software and Services",
+    "description": "Gusto helps small businesses and their teams to do the best work of their lives. Our customers truly love our product and we think you\u2019ll love building it. Come join us in San Francisco or Denver and help serve over 60,000 businesses across the USA.",
+    "website": "https://www.b9.com.br/113864/volkswagen-apresenta-oficialmente-novo-design-e-logo/",
+    "women_achievements": "We are part of the women in tech gender equality comitee of Californian Startups",
+    "employees": 501,
+    "women_employees_percentaje": 43
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 12,
+  "fields": {
+    "user": 9,
+    "name": "Ten analytics",
+    "logo": "https://s03.s3c.es/imag/_v0/770x420/2/6/e/ten-logo.jpg",
+    "location": "San Francisco, CA",
+    "industry": "Healthcare",
+    "description": "At Segment, we believe companies should be able to send their data wherever they want, whenever they want, with no fuss.  We make this easy with a single platform that collects, stores, filters, transforms, and sends data to hundreds of business tools with the flip of a switch. More recently, we also developed the ability to let customers enrich their data in real time using computations they specify. Our goal is to make it easy to understand, extract value, and protect the integrity of data.  We are creating a world where engineers spend their time working on their core product, letting us take care of the complexities of processing their customer data reliably at scale. We\u2019re in the running to take over the entire customer data ecosystem, and we need the best people to take the market.",
+    "website": "https://es.wikipedia.org/wiki/Ten_(canal_de_televisi%C3%B3n)",
+    "women_achievements": "",
+    "employees": 400,
+    "women_employees_percentaje": 20
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 13,
+  "fields": {
+    "user": 10,
+    "name": "smart odinnadtsat",
+    "logo": "https://smart11.pl/wp-content/themes/base/images/www/smart11-mini.png",
+    "location": "Moscow",
+    "industry": "Financial Technology and Services",
+    "description": "Razorpay is India\u2019s first converged payments solution company. We act as a payments layer for businesses and provide end-to- end solutions required for operating payments in their business models, not as just a software but as an actual extension of their business. Our clients characterise Razorpay as the company focused on building the future of payments in India. We have designed products to help organizations control their entire flow of money, starting from accepting payments to managing them internally to disbursing required payments to vendors. These products serve as a layer on top of the payment gateway and provide wonderful functionalities like charging recurring payments, collecting bank account transfers in the same dashboard, generating payable SMS links and mail invoices and much more. In its 3 years of public release, Razorpay has been able to garner over 75,000 merchants who trust us including the likes of IRCTC, Swiggy, Zomato, Zerodha, GoIbibo and many more. We are on",
+    "website": "https://smart11.pl/",
+    "women_achievements": "",
+    "employees": 370,
+    "women_employees_percentaje": 20
+  }
+},
+{
+  "model": "ada.company",
+  "pk": 14,
+  "fields": {
+    "user": 11,
+    "name": "dodici.it",
+    "logo": "https://seeklogo.com/images/D/dodici-logo-3960BF7D23-seeklogo.com.gif",
+    "location": "Rome, IT",
+    "industry": "Consumer Goods and Services",
+    "description": "About Mixpanel  At Mixpanel, our mission is to increase the rate of innovation. Not only as a company, but for the businesses we serve. Through our analytics platform, companies can analyze how and why their users engage, convert, and retain in real time across web, mobile, and smart devices. Then they can use that data to improve their business and products.  About Mixpanel Engineering  The Engineering, Product and Design teams at Mixpanel together build Mixpanel\u2019s product. The team consists of very talented and nice people who collaborate to solve problems.  We organize in Product Groups which are small groups (3 to 8 people) comprised of engineers, product managers and designers working on a problem or an investment area with complete autonomy over the development process.  We are customer focused and data driven - We like to iterate, learn and improve quickly using qualitative and quantitative data to continuously deliver customer value.  Our engineering team gets to work on really",
+    "website": "https://seeklogo.com/vector-logo/217344/dodici",
+    "women_achievements": "Italian company with more women in tech leading positions.",
+    "employees": 310,
+    "women_employees_percentaje": 60
+  }
 }
 ]
