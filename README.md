@@ -1,13 +1,13 @@
-# **SEI-Project-04: ADA: Women 3.0** 👩🏽‍💻
+# **SEI-Project-04: ADA  Women 3.0** 👩🏽‍💻👩🏻‍💻
 
 ### A hiring app for women developers in gender responsible companies.
 
 ## Overview:
 Seeking to connect women in tech with companies committed to narrowing the gender gap I decided to create an ADA. A Hiring app that not only shows offers but also gender diversity committed companies and tech women. The ADA Women 3.0 web application works by selecting the different technologies and interests of the women profiles and offers to make matches! During this project, I had the chance to reinforce my knowledge in Front-end and Back-end developing languages to solve a real-world problem that has concerned me for a long while. At the same time, I could create an authentication with two different types of users (applicants and companies).
 
-[Here you can check the website!](http://camilabuenamar.github.io/project-04)
+[Here you can check the website!](https://ada-women30.herokuapp.com/#/offers)
 
-![Screenshot of the App](https://ada-women30.herokuapp.com/#/offers)
+![Screenshot of the App](https://imgur.com/P4PKrQu.jpg)
 
 ## Brief:
 - Full-Stack application.
