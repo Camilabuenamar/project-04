@@ -2,6 +2,8 @@
 
 ### A hiring app for women developers in gender responsible companies.
 
+        **🚧STILL UNDER CONSTRUCTION**
+
 ## Overview:
 Seeking to connect women in tech with companies committed to narrowing the gender gap I decided to create an ADA. A Hiring app that not only shows offers but also gender diversity committed companies and tech women. The ADA Women 3.0 web application works by selecting the different technologies and interests of the women profiles and offers to make matches! During this project, I had the chance to reinforce my knowledge in Front-end and Back-end developing languages to solve a real-world problem that has concerned me for a long while. At the same time, I could create an authentication with two different types of users (applicants and companies).
 
@@ -62,7 +64,7 @@ Seeking to connect women in tech with companies committed to narrowing the gende
             model = Company
             fields = ('id', 'name', 'logo', 'location', 'industry', 'description', 'website', 'women_achievements', 'employees', 'women_employees_percentaje')
   ```
-  - Ownership of offers: Relationships, one to one, or one to many, are important to this project. Mainly because there are multiple relationships between our three models (companies, offers and applicants). For example one offer can relate to only one company but a company can relate to many offers. This was done throught populated serializers. Here you can see an example of both serializers:
+  - Ownership of offers: Relationships, one to one, or one to many, are important to this project. Mainly because there are multiple relationships between our three models (companies, offers and applicants). For example one offer can relate to only one company but a company can relate to many offers. This was done through populated serializers. Here you can see an example of both serializers:
   ``` Python
     class PopulatedCompanySerializer(serializers.ModelSerializer):
 
@@ -125,7 +127,7 @@ Seeking to connect women in tech with companies committed to narrowing the gende
         "serve:frontend": "webpack-dev-server"
         },
     ```
--  **Showing especific offer/company/profile in the same page:** In previous projects I always had separate pages for index and individual show page. In this project I wanted to try something new, so the user could see in the same screen both, the list of offers/companies/applicants with the one they want to explore in detail. To do this it was necessary to set a state with the desired data that will make axios requests to the API so it can be displayed at the moment.
+-  **Showing specific offer/company/profile in the same page:** In previous projects I always had separate pages for index and individual show page. In this project I wanted to try something new, so the user could see in the same screen both, the list of offers/companies/applicants with the one they want to explore in detail. To do this it was necessary to set a state with the desired data that will make axios requests to the API so it can be displayed at the moment.
   ```javascript
   showApplicant(e){
     axios.get(`/api/applicants/${e.target.value}/`)
@@ -133,10 +135,16 @@ Seeking to connect women in tech with companies committed to narrowing the gende
       .then(console.log(this.state.specificapplicant))
   }
   ```
-- **Visual:** Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- **Visual:** For the visual purposes of this webpage I wanted to have consistent and simple design that could be attractive to both, companies and applicants, which is easy to navigate. The colors I selected where light but contrast of boldness is added with red shades. The home page and login and register are the most simples which lead the users to take small decisions with low distractions.
 
 ## Wins and blockers:
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The webpage is currently displaying fake offers, companies and applicants, the primary functions such as login, register (for applicants and companies) and browsing and detailed view of offers, companies and applicants is working too. But still the posting and application to offers is not developed due to the short amount of time, which was the principal blocker.
 
 ## Future features:
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In the future, the app should count with:
+ - companies directly creating offers.
+ - Applicants that can apply to this offers and companies that can see their applications received.
+ - Personal profile for each user where they can see their offers.
+ - About section to explain more of the projects.
+ - More information for the people before registering.
+ - More options of technologies for the offers and applicants to add.
