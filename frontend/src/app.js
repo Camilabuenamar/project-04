@@ -4,6 +4,7 @@ import './style.scss'
 import { HashRouter, Route , Switch} from 'react-router-dom'
 
 import Home from './components/pages/Home'
+import About from './components/pages/About'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import CompanyRegister from './components/auth/CompanyRegister'
@@ -18,6 +19,7 @@ class App extends React.Component {
     return (
       <HashRouter>
         <Switch>
+          <Route path="/about" component={About} />
           <Route path="/applicants" component={UserIndex} />
           <Route path="/companies" component={CompanyIndex} />
           <Route path="/offers" component={OfferIndex} />

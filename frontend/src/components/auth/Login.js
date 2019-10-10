@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
+import Navbar from '../common/Navbar.js'
 import { withRouter } from 'react-router-dom'
 
 class Login extends React.Component {
@@ -35,17 +36,11 @@ class Login extends React.Component {
       })
   }
 
-  componentDidMount() {
-    document.documentElement.classList.remove('has-navbar-fixed-top')
-  }
-
-  componentWillUnmount() {
-    document.documentElement.classList.add('has-navbar-fixed-top')
-  }
 
   render() {
     return (
-      <section className="hero has-background">
+      <section className="hero is-fullheight-with-navbar has-background">
+        <Navbar/>
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <div className="container">

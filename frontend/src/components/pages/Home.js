@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Navbar from '../common/Navbar.js'
 
 class Home extends React.Component {
 
@@ -14,6 +15,7 @@ class Home extends React.Component {
   render() {
     return (
       <section className="hero is-large has-background">
+        <Navbar/>
         <img alt="Home image" className="hero-background is-transparent" src="https://i.imgur.com/UHlP7Fj.jpg" />
         <div className="hero-body">
           <div className="container">
@@ -29,6 +31,11 @@ class Home extends React.Component {
               <Link to ="/login"><a className="button is-danger is-outlined" id="first-button">Login</a></Link>
               <Link to ="/register"><a className="button is-danger is-outlined" id="second-button">Register</a></Link>
             </div>
+          </div>
+          <div className="info has-text-centered">
+            <h2 className="subtitle is-6">
+            The hiring page that matches women in tech with gender conscious companies.
+            </h2>
           </div>
         </div>
       </section>
