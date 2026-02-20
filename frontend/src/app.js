@@ -1,5 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import 'bulma/css/bulma.min.css'
 import './style.scss'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 

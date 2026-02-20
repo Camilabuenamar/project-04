@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "serve:backend": "python manage.py runserver 4000",
+    "serve:backend": "pipenv run python manage.py runserver 4000",
     "serve:frontend": "webpack serve --mode development",
-    "seed": "python manage.py loaddata ada/fixtures.json"
+    "seed": "python3 manage.py loaddata ada/fixtures.json"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
@@ -31,7 +31,7 @@
     "react-router-dom": "^7.0.0",
     "react-select": "^5.9.0",
     "react-toastify": "^11.0.5",
-    "sass": "^1.85.0",
+    "sass": "1.57.1",
     "sass-loader": "^16.0.5",
     "style-loader": "^3.3.4",
     "webpack": "^5.97.0",
