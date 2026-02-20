@@ -1,10 +1,10 @@
 import React from 'react'
 import axios from 'axios'
-import { withRouter } from 'react-router-dom'
+import { withRouter } from '../../lib/withRouter'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 const animatedComponents = makeAnimated()
-import ReactFilestack from 'filestack-react'
+import { PickerOverlay } from 'filestack-react'
 import Auth from '../../lib/Auth'
 
 const FILESTACK_KEY = process.env.FILESTACK_KEY
@@ -44,15 +44,8 @@ const skills = [
   { value: 'C', label: 'C' }
 ]
 
-const fileKEY = 'A8aKWU9DhRZWwwjGt0mDkz'
-
-const imageUpload = {
-  accept: 'image/*',
-  options: {
-    resize: {
-      width: 100
-    }
-  },
+const imagePickerOptions = {
+  accept: ['image/*'],
   transformations: {
     crop: false,
     circle: false,
@@ -69,7 +62,9 @@ class UserRegister extends React.Component {
         skills: [],
         roles: []
       },
-      errors: {}
+      errors: {},
+      showImagePicker: false,
+      showCvPicker: false
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -88,26 +83,26 @@ class UserRegister extends React.Component {
   }
 
   handleChangeSkills(selectedSkills) {
-    const skills = selectedSkills.map(skills => skills.value)
-    const formData = { ...this.state.formData, skills: skills}
+    const skillValues = selectedSkills.map(s => s.value)
+    const formData = { ...this.state.formData, skills: skillValues}
     this.setState({ formData })
   }
 
   handleChangeRoles(selectedRoles) {
-    const roles = selectedRoles.map(roles => roles.value)
-    const formData = { ...this.state.formData, roles: roles}
+    const roleValues = selectedRoles.map(r => r.value)
+    const formData = { ...this.state.formData, roles: roleValues}
     this.setState({ formData })
   }
 
   handleUploadImages(e) {
     const formData = {...this.state.formData, image: e.filesUploaded[0].url}
-    this.setState({ formData })
+    this.setState({ formData, showImagePicker: false })
     document.getElementById('progress').innerHTML = 'image chosen'
   }
 
   handleUploadCv(e) {
     const formData = {...this.state.formData, cv: e.filesUploaded[0].url}
-    this.setState({ formData })
+    this.setState({ formData, showCvPicker: false })
     document.getElementById('progress').innerHTML = 'CV chosen'
   }
 
@@ -180,15 +175,14 @@ class UserRegister extends React.Component {
                 <label className="label">Picture</label>
                 <div className="Dropzone upload-box">
                   <div className="uploadbutton">
-                    <ReactFilestack
-                      mode="transform"
-                      apikey={FILESTACK_KEY}
-                      buttonClass="button"
-                      className="button"
-                      options={imageUpload}
-                      onSuccess={(e) => this.handleUploadImages(e)}
-                      preload={true}
-                    />
+                    <button type="button" className="button" onClick={() => this.setState({ showImagePicker: true })}>Upload Picture</button>
+                    {this.state.showImagePicker && (
+                      <PickerOverlay
+                        apikey={FILESTACK_KEY}
+                        pickerOptions={imagePickerOptions}
+                        onUploadDone={(e) => this.handleUploadImages(e)}
+                      />
+                    )}
                     <div><span id="progress"></span></div>
                   </div>
                 </div>
@@ -271,13 +265,13 @@ class UserRegister extends React.Component {
                 <label className="label">Upload your CV</label>
                 <div className="Dropzone upload-box">
                   <div className="uploadbutton">
-                    <ReactFilestack
-                      mode="transform"
-                      apikey={FILESTACK_KEY}
-                      buttonClass="button"
-                      onSuccess={(e) => this.handleUploadCv(e)}
-                      preload={true}
-                    />
+                    <button type="button" className="button" onClick={() => this.setState({ showCvPicker: true })}>Upload CV</button>
+                    {this.state.showCvPicker && (
+                      <PickerOverlay
+                        apikey={FILESTACK_KEY}
+                        onUploadDone={(e) => this.handleUploadCv(e)}
+                      />
+                    )}
                     <div><span id="progress"></span></div>
                   </div>
                 </div>

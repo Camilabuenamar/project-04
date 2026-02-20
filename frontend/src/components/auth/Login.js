@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 import Navbar from '../common/Navbar.js'
-import { withRouter } from 'react-router-dom'
+import { withRouter } from '../../lib/withRouter'
 
 class Login extends React.Component {
 

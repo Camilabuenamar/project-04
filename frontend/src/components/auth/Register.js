@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { withRouter } from 'react-router-dom'
+import { withRouter } from '../../lib/withRouter'
 import Navbar from '../common/Navbar.js'
 import Auth from '../../lib/Auth'
 

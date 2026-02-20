@@ -1,5 +1,3 @@
-import jwt from 'jsonwebtoken'
-
 class Auth {
   static setToken(token) {
     localStorage.setItem('token', token)
@@ -26,7 +24,15 @@ class Auth {
   }
 
   static getPayload() {
-    return jwt.decode(this.getToken())
+    const token = this.getToken()
+    if (!token) return null
+    try {
+      const base64Url = token.split('.')[1]
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
+      return JSON.parse(atob(base64))
+    } catch (e) {
+      return null
+    }
   }
 
   static isAuthenticated() {

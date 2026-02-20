@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { withRouter } from '../../lib/withRouter'
 import Auth from '../../lib/Auth'
 
 class Navbar extends React.Component {

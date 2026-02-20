@@ -1,18 +1,13 @@
 import React from 'react'
 import axios from 'axios'
-import { withRouter } from 'react-router-dom'
-import ReactFilestack from 'filestack-react'
+import { withRouter } from '../../lib/withRouter'
+import { PickerOverlay } from 'filestack-react'
 import Auth from '../../lib/Auth'
 
 const FILESTACK_KEY = process.env.FILESTACK_KEY
 
-const imageUpload = {
-  accept: 'image/*',
-  options: {
-    resize: {
-      width: 100
-    }
-  },
+const imagePickerOptions = {
+  accept: ['image/*'],
   transformations: {
     crop: false,
     circle: false,
@@ -26,7 +21,8 @@ class CompanyRegister extends React.Component {
     super()
     this.state = {
       formData: {},
-      errors: {}
+      errors: {},
+      showPicker: false
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -42,7 +38,7 @@ class CompanyRegister extends React.Component {
 
   handleUploadImages(e) {
     const formData = {...this.state.formData, logo: e.filesUploaded[0].url}
-    this.setState({ formData })
+    this.setState({ formData, showPicker: false })
     document.getElementById('progress').innerHTML = 'image chosen'
   }
 
@@ -101,14 +97,14 @@ class CompanyRegister extends React.Component {
                 <label className="label">Logo</label>
                 <div className="Dropzone upload-box">
                   <div className="uploadbutton">
-                    <ReactFilestack
-                      mode="transform"
-                      apikey={FILESTACK_KEY}
-                      buttonClass="button"
-                      options={imageUpload}
-                      onSuccess={(e) => this.handleUploadImages(e)}
-                      preload={true}
-                    />
+                    <button type="button" className="button" onClick={() => this.setState({ showPicker: true })}>Upload Logo</button>
+                    {this.state.showPicker && (
+                      <PickerOverlay
+                        apikey={FILESTACK_KEY}
+                        pickerOptions={imagePickerOptions}
+                        onUploadDone={(e) => this.handleUploadImages(e)}
+                      />
+                    )}
                     <div><span id="progress"></span></div>
                   </div>
                   {this.state.errors.logo && <small className="help is-danger">{this.state.errors.logo}</small>}

@@ -16,32 +16,37 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'frontend/dist')
   },
-  devtool: 'source-maps',
+  devtool: 'source-map',
   module: {
     rules: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
-      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] },
-      { test: /\.woff2?$/, loader: 'file-loader' },
-      { test: /\.(jpg|png|gif)$/, loader: 'file-loader' }
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.s(a|c)ss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.woff2?$/, type: 'asset/resource' },
+      { test: /\.(jpg|png|gif)$/, type: 'asset/resource' }
     ]
   },
   devServer: {
-    contentBase: 'src',
+    static: {
+      directory: path.resolve(__dirname, 'frontend/src')
+    },
+    client: {
+      overlay: { errors: true, warnings: false }
+    },
     hot: true,
     open: true,
     port: 8000,
-    watchContentBase: true,
-    proxy: {
-      '/api': 'http://localhost:4000'
-    }
+    proxy: [{
+      context: ['/api'],
+      target: 'http://localhost:4000'
+    }]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
-      inject: 'body'
+      inject: 'body',
+      scriptLoading: 'blocking'
     }),
     env
   ]
