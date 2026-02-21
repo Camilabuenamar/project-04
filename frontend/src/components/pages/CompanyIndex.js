@@ -172,7 +172,7 @@ class CompanyIndex extends React.Component {
                     <p className="content text"><span className="has-text-weight-semibold">Efforts on women equality: </span>{this.state.specificcompany.women_achievements}</p>
                     <p className="content text"><span className="has-text-weight-semibold">Number of employees: </span>{this.state.specificcompany.employees}</p>
                     <p className="content text"><span className="has-text-weight-semibold">percentage of women employees: </span>{this.state.specificcompany.women_employees_percentaje}</p>
-                    <a  href={this.state.specificcompany.website} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Website</a>
+                    <a  href={this.state.specificcompany.website} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" style={{marginRight: '6px'}} src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Website</a>
                     <br/>
                   </div>
                 </div>

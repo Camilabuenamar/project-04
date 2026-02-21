@@ -9,11 +9,11 @@ const UserCard = ({ id, firstname, lastname, headline, roles, skills, onClick })
         <div className="card-header-title has-text-danger has-text-centered">{firstname} {lastname}</div>
       </div>
       <div className="card-content">
-        <h2 className="content text">{headline}</h2>
-        <p className="content text"> <span className="has-text-weight-semibold">Roles: </span>
+        <p className="subtitle is-6">{headline}</p>
+        <p className="content text"> <span>Roles: </span>
           <div className="tags">{roles.map(role => <div className="tag" key={role}>{role}</div>)}</div>
         </p>
-        <p className="content text"> <span className="has-text-weight-semibold">Technologies: </span>
+        <p className="content text"> <span>Technologies: </span>
           <div className="tags">{skills.map(skill => <div className="tag" key={skill}>{skill}</div>)}</div>
         </p>
       </div>

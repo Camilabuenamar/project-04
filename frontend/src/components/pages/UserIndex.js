@@ -232,13 +232,13 @@ class UserIndex extends React.Component {
                     <h3 className="subtitle"><span className="has-text-weight-semibold">Desired roles:</span><div className="tags">{this.state.specificapplicant.roles.map(role => <div className="tag" key={role}>{role}</div>)}</div></h3>
                     <h3 className="subtitle"><span className="has-text-weight-semibold">Technologies:</span><div className="tags">{this.state.specificapplicant.skills.map(skill => <div className="tag" key={skill}>{skill}</div>)}</div></h3>
                     <div className="buttons has-text-centered">
-                      <a  href={this.state.specificapplicant.github} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Y0Mskai.png" alt="GithubLogo"/>GitHub</a>
-                      <a  href={this.state.specificapplicant.linkedin} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/>LinkedIn</a>
-                      <a  href={this.state.specificapplicant.portfolio} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Portfolio</a>
-                      <a  href={this.state.specificapplicant.cv} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" src="https://i.imgur.com/Rn77cJl.png" alt="CV"/>Download CV</a>
+                      <a  href={this.state.specificapplicant.github} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" style={{marginRight: '6px'}} src="https://i.imgur.com/Y0Mskai.png" alt="GithubLogo"/>GitHub</a>
+                      <a  href={this.state.specificapplicant.linkedin} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" style={{marginRight: '6px'}} src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/>LinkedIn</a>
+                      <a  href={this.state.specificapplicant.portfolio} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" style={{marginRight: '6px'}} src="https://i.imgur.com/hfjEwCN.png" alt="Portfolio"/>Portfolio</a>
+                      <a  href={this.state.specificapplicant.cv} className="button is-small is-danger is-outlined" rel="noopener noreferrer" target="_blank"><img className="icon" style={{marginRight: '6px'}} src="https://i.imgur.com/Rn77cJl.png" alt="CV"/>Download CV</a>
                     </div>
                   </div>
-                  <button className="button is-danger is-fullwidth"> ✉️Contact</button>
+                  <button className="button is-danger is-fullwidth"> ✉️  Contact</button>
                 </div>
               </article>
             </div> }
