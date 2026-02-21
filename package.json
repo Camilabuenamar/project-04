@@ -7,7 +7,9 @@
     "build": "webpack --mode production",
     "serve:backend": "pipenv run python manage.py runserver 4000",
     "serve:frontend": "webpack serve --mode development",
-    "seed": "python3 manage.py loaddata ada/fixtures.json"
+    "seed": "python3 manage.py loaddata ada/fixtures.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d frontend/dist"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
@@ -43,6 +45,7 @@
     "chai": "^5.1.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.37.0",
+    "gh-pages": "^6.3.0",
     "mocha": "^11.0.0",
     "supertest": "^7.0.0"
   }

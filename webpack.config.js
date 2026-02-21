@@ -14,7 +14,8 @@ module.exports = {
   context: path.resolve(__dirname, 'frontend'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'frontend/dist')
+    path: path.resolve(__dirname, 'frontend/dist'),
+    publicPath: process.env.NODE_ENV === 'production' ? '/project-04/' : '/'
   },
   devtool: 'source-map',
   module: {

@@ -10,7 +10,10 @@ django = "*"
 djangorestframework = "*"
 pyjwt = "*"
 psycopg2-binary = "*"
-django-heroku = "*"
+dj-database-url = "*"
+whitenoise = "*"
+gunicorn = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.9"

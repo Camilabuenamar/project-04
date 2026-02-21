@@ -1,8 +1,13 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import axios from 'axios'
 import 'bulma/css/bulma.min.css'
 import './style.scss'
 import { HashRouter, Route, Routes } from 'react-router-dom'
+
+if (process.env.API_URL) {
+  axios.defaults.baseURL = process.env.API_URL
+}
 
 import Home from './components/pages/Home'
 import About from './components/pages/About'
